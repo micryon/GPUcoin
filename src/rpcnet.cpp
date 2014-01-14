@@ -4,6 +4,8 @@
 
 #include "net.h"
 #include "bitcoinrpc.h"
+#include "alert.h"
+#include "base58.h"
 
 using namespace json_spirit;
 using namespace std;
