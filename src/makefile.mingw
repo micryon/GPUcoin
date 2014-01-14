@@ -104,6 +104,7 @@ OBJS= \
     obj/bloom.o \
     obj/noui.o \
     obj/leveldb.o \
+    obj/checkpointsync.o \
     obj/txdb.o
 
 ifdef USE_SSE2
