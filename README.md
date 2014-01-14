@@ -9,7 +9,7 @@ Copyright (c) 2011-2013 RonPaulCoin Developers
 What is RonPaulCoin?
 ----------------
 
-RonPaulCoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
+RonPaulCoin is a more rare version of Bitcoin using scrypt as a proof-of-work algorithm.
  - 2.0 minute block targets
  - subsidy halves in 1051k blocks (~4 years)
  - ~2.1 million total coins
