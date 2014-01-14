@@ -16,7 +16,7 @@ RonPaulCoin is a lite version of Bitcoin using scrypt as a proof-of-work algorit
 
 The rest is the same as Bitcoin.
  - 1 coin per block
- - 2019 blocks to retarget difficulty
+ - 720 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
 the RonPaulCoin client sofware, see http://www.ronpaulcoin.org.
