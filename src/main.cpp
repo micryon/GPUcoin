@@ -2772,7 +2772,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0x8fcfeaa10e07755804e2663c608ead592e06b0e3f87c5773905162c09be93c48");
+        hashGenesisBlock = uint256("0x0ab57c2e763aef69d99638ae0059ed157ed6d0181b9e35cf71e04401ef240fee");
     }
 
     //
@@ -2805,7 +2805,8 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "Ron Paul News 23/Dec/2013 Obamacare Could Have Meltdown";
+        const char* pszTimestamp = !fTestNet ? "Ron Paul News 23/Dec/2013 Obamacare Could Have Meltdown" : "RPC Testnet3";
+
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2823,16 +2824,68 @@ bool InitBlockIndex() {
 
         if (fTestNet)
         {
-            block.nTime    = 1317798646;
-            block.nNonce   = 5968098;
+            block.nTime    = 1389749325;
+            block.nBits    = 0x1e0ffff0;
+            block.nNonce   = 8461879;
         }
 
+        /* Kept for future
+        // If genesis block hash does not match, then generate new genesis hash.
+              if (true && block.GetHash() != hashGenesisBlock)
+              {
+                  printf("Searching for genesis block...\n");
+                  // This will figure out a valid hash and Nonce if you're
+                  // creating a different genesis block:
+                  uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
+                  uint256 thash;
+                  char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
+
+                  loop
+                  {
+      #if defined(USE_SSE2)
+                      // Detection would work, but in cases where we KNOW it always has SSE2,
+                      // it is faster to use directly than to use a function pointer or conditional.
+      #if defined(_M_X64) || defined(__x86_64__) || defined(_M_AMD64) || (defined(MAC_OSX) && defined(__i386__))
+                      // Always SSE2: x86_64 or Intel MacOS X
+                      scrypt_1024_1_1_256_sp_sse2(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
+      #else
+                      // Detect SSE2: 32bit x86 Linux or Windows
+                      scrypt_1024_1_1_256_sp(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
+      #endif
+      #else
+                      // Generic scrypt
+                      scrypt_1024_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
+      #endif
+                      if (thash <= hashTarget)
+                          break;
+                      if ((block.nNonce & 0xFFF) == 0)
+                      {
+                          printf("nonce %08X: hash = %s (target = %s)\n", block.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+                      }
+                      ++block.nNonce;
+                      if (block.nNonce == 0)
+                      {
+                          printf("NONCE WRAPPED, incrementing time\n");
+                          ++block.nTime;
+                      }
+                  }
+               }
+
+        */
         //// debug print
         uint256 hash = block.GetHash();
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x242fa5d7cc0bb344d707c4282ed8cbafa049153c1e2052258115e58a1a00dca1"));
+        if (fTestNet)
+        {
+            assert(block.hashMerkleRoot == uint256("0x9673d970cb7d6db03ad7be867d53291eaf1599a688a5f75a34f31bd7420d74ae"));
+        }
+        else
+        {
+            assert(block.hashMerkleRoot == uint256("0x242fa5d7cc0bb344d707c4282ed8cbafa049153c1e2052258115e58a1a00dca1"));
+        }
+
         block.print();
         assert(hash == hashGenesisBlock);
 
