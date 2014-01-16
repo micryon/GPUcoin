@@ -1072,14 +1072,19 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 1.0 * 24 * 60 * 60; // RonPaulCoin: 1.0 day
+
+int64 nTargetTimespan = 1.0 * 24 * 60 * 60; // RonPaulCoin: 1.0 day
+
 static const int64 nTargetSpacing = 2.0 * 60; // RonPaulCoin: 2.0 minutes
-static const int64 nInterval = nTargetTimespan / nTargetSpacing;
+
+//Tranz
+//static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
 // minimum amount of work that could possibly be required nTime after
 // minimum work required was nBase
 //
+/* This will be turned back on after fork
 unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 {
     // Testnet has min-difficulty blocks
@@ -1098,8 +1103,10 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     }
     if (bnResult > bnProofOfWorkLimit)
         bnResult = bnProofOfWorkLimit;
+
     return bnResult.GetCompact();
 }
+*/
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
@@ -1109,13 +1116,31 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
-    // Only change once per interval
-    if ((pindexLast->nHeight+1) % nInterval != 0)
-    {
+
+
+    // The next block
+    int nHeight = pindexLast->nHeight + 1;
+
+    // Difficulty change Fork
+    int nDiffFork = 20000;
+    if((nHeight >= nDiffFork) || (fTestNet && (nHeight >= 2016)))
+      nTargetTimespan = (1 * 24 * 60 * 60) / 15; // 1/15 days = 5,760
+
+    // 720 blocks initial, 48 after diff fork
+    int nInterval = nTargetTimespan / nTargetSpacing;
+
+    bool fHardFork = (nHeight == nDiffFork);
+    if(fTestNet)
+       fHardFork = (nHeight == 2016 );
+
+
+    // Difficulty rules regular blocks
+    if((nHeight % nInterval != 0) && !(fHardFork)) {
+
         // Special difficulty rule for testnet:
         if (fTestNet)
         {
-            // If the new block's timestamp is more than 2* 10 minutes
+            // If the new block's timestamp is more than 2* 2 minutes
             // then allow mining of a min-difficulty block.
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
                 return nProofOfWorkLimit;
@@ -1132,43 +1157,51 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         return pindexLast->nBits;
     }
 
-    // RonPaulCoin: This fixes an issue where a 51% attack can change difficulty at will.
-    // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
-    int blockstogoback = nInterval-1;
-    if ((pindexLast->nHeight+1) != nInterval)
-        blockstogoback = nInterval;
+    // The 1st retarget after genesis
+    if(nInterval >= nHeight) nInterval = nHeight - 1;
 
-    // Go back by what we want to be 14 days worth of blocks
+
+    // Go back by nInterval
     const CBlockIndex* pindexFirst = pindexLast;
-    for (int i = 0; pindexFirst && i < blockstogoback; i++)
-        pindexFirst = pindexFirst->pprev;
+    for(int i = 0; pindexFirst && i < nInterval; i++)
+      pindexFirst = pindexFirst->pprev;
     assert(pindexFirst);
+
 
     // Limit adjustment step
     int64 nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
     printf("  nActualTimespan = %"PRI64d"  before bounds\n", nActualTimespan);
-	
-	if(pindexLast->nHeight+1 > 10000)
-	{
-			if (nActualTimespan < nTargetTimespan/4)
-					nActualTimespan = nTargetTimespan/4;
-			if (nActualTimespan > nTargetTimespan*4)
-					nActualTimespan = nTargetTimespan*4;
-	}
-	else if(pindexLast->nHeight+1 > 5000)
-	{
-			if (nActualTimespan < nTargetTimespan/8)
-					nActualTimespan = nTargetTimespan/8;
-			if (nActualTimespan > nTargetTimespan*4)
-					nActualTimespan = nTargetTimespan*4;
-	}
-	else
-	{
-			if (nActualTimespan < nTargetTimespan/16)
-					nActualTimespan = nTargetTimespan/16;
-			if (nActualTimespan > nTargetTimespan*4)
-					nActualTimespan = nTargetTimespan*4;
-	}
+
+
+   // The initial settings
+    int nActualTimespanMax = nTargetTimespan*4; // 86,400 * 4 = 345600
+    int nActualTimespanMin = nTargetTimespan/16; // 86,400 / 16 = 5400
+
+    // The first inherited fork
+    if(nHeight > 5000) {
+       nActualTimespanMax = nTargetTimespan*4; // 86,400 * 4 = 345600
+       nActualTimespanMin = nTargetTimespan/8; // 86,400 / 8 = 10800
+    }
+
+    // The second inherited fork
+    if(nHeight > 10000) {
+       nActualTimespanMax = nTargetTimespan*4; // 86,400 * 4 = 345600
+       nActualTimespanMin = nTargetTimespan/4; // 86,400 / 4 = 21600
+    }
+
+    // Our fork 11% change
+    if ((nHeight >= nDiffFork) || (fTestNet && (nHeight >=2016 ))) {
+        nActualTimespanMax = nTargetTimespan*10/9;  //5760 * 10 / 9 = 6400
+        nActualTimespanMin = nTargetTimespan*9/10;  //5760 * 9 / 10 = 5184
+    }
+
+
+    if(nActualTimespan < nActualTimespanMin) nActualTimespan = nActualTimespanMin;
+    if(nActualTimespan > nActualTimespanMax) nActualTimespan = nActualTimespanMax;
+
+
+    printf("RETARGET: nActualTimespan = %d after bounds\n", nActualTimespan);
+    printf("RETARGET: nTargetTimespan = %d, nTargetTimespan/nActualTimespan = %.4f\n", nTargetTimespan, (float) nTargetTimespan/nActualTimespan);
 
     // Retarget
     CBigNum bnNew;
@@ -1176,8 +1209,10 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     bnNew *= nActualTimespan;
     bnNew /= nTargetTimespan;
 
+
     if (bnNew > bnProofOfWorkLimit)
         bnNew = bnProofOfWorkLimit;
+
 
     /// debug print
     printf("GetNextWorkRequired RETARGET\n");
@@ -1186,6 +1221,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     printf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.getuint256().ToString().c_str());
 
     return bnNew.GetCompact();
+
 }
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits)
@@ -2297,6 +2333,14 @@ bool ProcessBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDiskBl
         return error("ProcessBlock() : CheckBlock FAILED");
 
     CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(mapBlockIndex);
+
+    //This is a bit harsh, but is needed for the time.
+    if((pblock->GetBlockTime() - pcheckpoint->nTime) < 0) {
+        if(pfrom) pfrom->Misbehaving(100);
+        return error("ProcessBlock() : block has a time stamp of %u before the last checkpoint of %u", pblock->GetBlockTime(), pcheckpoint->nTime);
+    }
+
+    /* This will be back on later after Diff Fork
     if (pcheckpoint && pblock->hashPrevBlock != hashBestChain)
     {
         // Extra checks to prevent "fill up memory by spamming with bogus blocks"
@@ -2313,7 +2357,7 @@ bool ProcessBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDiskBl
         {
             return state.DoS(100, error("ProcessBlock() : block with too little proof-of-work"));
         }
-    }
+    }*/
     // ppcoin: ask for pending sync-checkpoint if any
     if (!IsInitialBlockDownload())
          AskForPendingSyncCheckpoint(pfrom);
