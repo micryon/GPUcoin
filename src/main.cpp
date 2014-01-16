@@ -1077,9 +1077,6 @@ int64 nTargetTimespan = 1.0 * 24 * 60 * 60; // RonPaulCoin: 1.0 day
 
 static const int64 nTargetSpacing = 2.0 * 60; // RonPaulCoin: 2.0 minutes
 
-//Tranz
-//static const int64 nInterval = nTargetTimespan / nTargetSpacing;
-
 //
 // minimum amount of work that could possibly be required nTime after
 // minimum work required was nBase
