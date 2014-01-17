@@ -217,6 +217,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/txdb.h \
     src/leveldb.h \
     src/threadsafety.h \
+    src/checkpointsync.h \
     src/limitedmap.h \
     src/qt/macnotificationhandler.h \
     src/qt/splashscreen.h
@@ -289,6 +290,7 @@ SOURCES += src/qt/bitcoin.cpp \
     src/scrypt.cpp \
     src/noui.cpp \
     src/leveldb.cpp \
+    src/checkpointsync.cpp \
     src/txdb.cpp \
     src/qt/splashscreen.cpp
 

@@ -88,6 +88,7 @@ OBJS= \
     obj/hash.o \
     obj/bloom.o \
     obj/leveldb.o \
+    obj/checkpointsync.o \
     obj/txdb.o
 
 ifdef USE_SSE2
