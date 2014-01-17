@@ -5,7 +5,7 @@ http://www.ronpaulcoin.org
 
 Copyright (c) 2009-2013 Bitcoin Developers
 
-Copyright (c) 2011-2013 RonPaulCoin Developers (colinistheman,onaboat,Tranz,Dajackal)
+Copyright (c) 2013-2014 RonPaulCoin Developers (colinistheman,onaboat,Tranz,Dajackal)
 
 What is RonPaulCoin?
 ----------------
