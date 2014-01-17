@@ -16,7 +16,7 @@ RonPaulCoin is a more rare version of Bitcoin using scrypt as a proof-of-work al
 
 The rest is the same as Bitcoin.
  - 1 coin per block
- - 720 blocks to retarget difficulty
+ - 48 blocks to difficulty retarget. 11% maximum change per retarget
 
 For more information, as well as an immediately useable, binary version of
 the RonPaulCoin client sofware, see http://www.ronpaulcoin.org.
