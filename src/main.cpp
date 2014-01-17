@@ -1115,7 +1115,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     int nHeight = pindexLast->nHeight + 1;
 
     // Difficulty change Fork
-    int nDiffFork = 20000;
+    int nDiffFork = 13650;
     if((nHeight >= nDiffFork) || (fTestNet && (nHeight >= 2016)))
       nTargetTimespan = (1 * 24 * 60 * 60) / 15; // 1/15 days = 5,760
 
