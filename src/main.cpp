@@ -1080,7 +1080,6 @@ static const int64 nTargetSpacing = 2.0 * 60; // RonPaulCoin: 2.0 minutes
 // minimum amount of work that could possibly be required nTime after
 // minimum work required was nBase
 //
-/* This maybe turned back on after fork, need to fix adjusment
 unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 {
     // Testnet has min-difficulty blocks
@@ -1102,7 +1101,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 
     return bnResult.GetCompact();
 }
-*/
+
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
@@ -1111,8 +1110,6 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     // Genesis block
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
-
-
 
     // The next block
     int nHeight = pindexLast->nHeight + 1;
@@ -1128,7 +1125,6 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     bool fHardFork = (nHeight == nDiffFork);
     if(fTestNet)
        fHardFork = (nHeight == 2016 );
-
 
     // Difficulty rules regular blocks
     if((nHeight % nInterval != 0) && !(fHardFork)) {
@@ -1156,20 +1152,17 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     // The 1st retarget after genesis
     if(nInterval >= nHeight) nInterval = nHeight - 1;
 
-
     // Go back by nInterval
     const CBlockIndex* pindexFirst = pindexLast;
     for(int i = 0; pindexFirst && i < nInterval; i++)
       pindexFirst = pindexFirst->pprev;
     assert(pindexFirst);
 
-
     // Limit adjustment step
     int64 nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
     printf("  nActualTimespan = %"PRI64d"  before bounds\n", nActualTimespan);
 
-
-   // The initial settings
+    // The initial settings
     int nActualTimespanMax = nTargetTimespan*4; // 86,400 * 4 = 345600
     int nActualTimespanMin = nTargetTimespan/16; // 86,400 / 16 = 5400
 
@@ -1190,7 +1183,6 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         nActualTimespanMax = nTargetTimespan*10/9;  //5760 * 10 / 9 = 6400
         nActualTimespanMin = nTargetTimespan*9/10;  //5760 * 9 / 10 = 5184
     }
-
 
     if(nActualTimespan < nActualTimespanMin) nActualTimespan = nActualTimespanMin;
     if(nActualTimespan > nActualTimespanMax) nActualTimespan = nActualTimespanMax;
@@ -2328,23 +2320,15 @@ bool ProcessBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDiskBl
     if (!pblock->CheckBlock(state))
         return error("ProcessBlock() : CheckBlock FAILED");
 
-    CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(mapBlockIndex);
-    if (pcheckpoint && pblock->hashPrevBlock != hashBestChain)
-    {
-       if((pblock->GetBlockTime() - pcheckpoint->nTime) < 0)
-       {
-          if(pfrom) pfrom->Misbehaving(100);
-       }
-        return error("ProcessBlock() : block has a time stamp of %"PRI64d" before the last checkpoint of %u", pblock->GetBlockTime(), pcheckpoint->nTime);
-    }
 
-    /* This maybe back on later after Diff Fork
+    CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(mapBlockIndex);
     if (pcheckpoint && pblock->hashPrevBlock != hashBestChain)
     {
         // Extra checks to prevent "fill up memory by spamming with bogus blocks"
         int64 deltaTime = pblock->GetBlockTime() - pcheckpoint->nTime;
         if (deltaTime < 0)
         {
+            if(pfrom) pfrom->Misbehaving(100);
             return state.DoS(100, error("ProcessBlock() : block with timestamp before last checkpoint"));
         }
         CBigNum bnNewBlock;
@@ -2355,11 +2339,10 @@ bool ProcessBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDiskBl
         {
             return state.DoS(100, error("ProcessBlock() : block with too little proof-of-work"));
         }
-    }*/
+    }
     // ppcoin: ask for pending sync-checkpoint if any
     if (!IsInitialBlockDownload())
          AskForPendingSyncCheckpoint(pfrom);
-
 
 
     // If we don't already have its previous block, shunt it off to holding area until we get it
