@@ -1074,14 +1074,13 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 
 
 int64 nTargetTimespan = 1.0 * 24 * 60 * 60; // RonPaulCoin: 1.0 day
-
 static const int64 nTargetSpacing = 2.0 * 60; // RonPaulCoin: 2.0 minutes
 
 //
 // minimum amount of work that could possibly be required nTime after
 // minimum work required was nBase
 //
-/* This will be turned back on after fork
+/* This maybe turned back on after fork, need to fix adjusment
 unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 {
     // Testnet has min-difficulty blocks
@@ -1197,8 +1196,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     if(nActualTimespan > nActualTimespanMax) nActualTimespan = nActualTimespanMax;
 
 
-    printf("RETARGET: nActualTimespan = %d after bounds\n", nActualTimespan);
-    printf("RETARGET: nTargetTimespan = %d, nTargetTimespan/nActualTimespan = %.4f\n", nTargetTimespan, (float) nTargetTimespan/nActualTimespan);
+    printf("RETARGET: nActualTimespan = %"PRI64d" after bounds\n", nActualTimespan);
+    printf("RETARGET: nTargetTimespan = %"PRI64d", nTargetTimespan/nActualTimespan = %.4f\n", nTargetTimespan, (float) nTargetTimespan/nActualTimespan);
 
     // Retarget
     CBigNum bnNew;
@@ -2330,14 +2329,16 @@ bool ProcessBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDiskBl
         return error("ProcessBlock() : CheckBlock FAILED");
 
     CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(mapBlockIndex);
-
-    //This is a bit harsh, but is needed for the time.
-    if((pblock->GetBlockTime() - pcheckpoint->nTime) < 0) {
-        if(pfrom) pfrom->Misbehaving(100);
-        return error("ProcessBlock() : block has a time stamp of %u before the last checkpoint of %u", pblock->GetBlockTime(), pcheckpoint->nTime);
+    if (pcheckpoint && pblock->hashPrevBlock != hashBestChain)
+    {
+       if((pblock->GetBlockTime() - pcheckpoint->nTime) < 0)
+       {
+          if(pfrom) pfrom->Misbehaving(100);
+       }
+        return error("ProcessBlock() : block has a time stamp of %"PRI64d" before the last checkpoint of %u", pblock->GetBlockTime(), pcheckpoint->nTime);
     }
 
-    /* This will be back on later after Diff Fork
+    /* This maybe back on later after Diff Fork
     if (pcheckpoint && pblock->hashPrevBlock != hashBestChain)
     {
         // Extra checks to prevent "fill up memory by spamming with bogus blocks"
