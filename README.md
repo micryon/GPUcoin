@@ -4,7 +4,7 @@ RonPaulCoin integration/staging tree
 http://www.ronpaulcoin.org
 
 Copyright (c) 2009-2013 Bitcoin Developers
-Copyright (c) 2011-2013 RonPaulCoin Developers
+Copyright (c) 2011-2013 RonPaulCoin Developers (colinistheman,onaboat,Tranz,Dajackal)
 
 What is RonPaulCoin?
 ----------------
@@ -13,8 +13,6 @@ RonPaulCoin is a more rare version of Bitcoin using scrypt as a proof-of-work al
  - 2.0 minute block targets
  - subsidy halves in 1051k blocks (~4 years)
  - ~2.1 million total coins
-
-The rest is the same as Bitcoin.
  - 1 coin per block
  - 48 blocks to difficulty retarget. 11% maximum change per retarget
 
