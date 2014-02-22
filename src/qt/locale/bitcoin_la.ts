@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About RonPaulCoin</source>
-        <translation>Informatio de RonPaulCoin</translation>
+        <source>About RealStackCoin</source>
+        <translation>Informatio de RealStackCoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;RonPaulCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;RonPaulCoin&lt;/b&gt; versio</translation>
+        <source>&lt;b&gt;RealStackCoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;RealStackCoin&lt;/b&gt; versio</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -33,8 +33,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+0"/>
-        <source>The RonPaulCoin developers</source>
-        <translation>RonPaulCoin curatores</translation>
+        <source>The RealStackCoin developers</source>
+        <translation>RealStackCoin curatores</translation>
     </message>
 </context>
 <context>
@@ -66,8 +66,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your RonPaulCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Haec sunt inscriptiones RonPaulCoin tuae pro accipendo pensitationes.  Cupias variam ad quemque mittentem dare ut melius scias quem tibi pensare.</translation>
+        <source>These are your RealStackCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Haec sunt inscriptiones RealStackCoin tuae pro accipendo pensitationes.  Cupias variam ad quemque mittentem dare ut melius scias quem tibi pensare.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -81,8 +81,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a RonPaulCoin address</source>
-        <translation>Signa nuntium ut demonstres inscriptionem RonPaulCoin a te possessam esse</translation>
+        <source>Sign a message to prove you own a RealStackCoin address</source>
+        <translation>Signa nuntium ut demonstres inscriptionem RealStackCoin a te possessam esse</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -106,8 +106,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified RonPaulCoin address</source>
-        <translation>Verifica nuntium ut cures signatum esse cum specificata inscriptione RonPaulCoin</translation>
+        <source>Verify a message to ensure it was signed with a specified RealStackCoin address</source>
+        <translation>Verifica nuntium ut cures signatum esse cum specificata inscriptione RealStackCoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -121,7 +121,7 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your RonPaulCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your RealStackCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Hae sunt inscriptiones mittendi pensitationes.  Semper inspice quantitatem et inscriptionem accipiendi antequam nummos mittis.</translation>
     </message>
     <message>
@@ -274,8 +274,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="-56"/>
-        <source>RonPaulCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ronpaulcoins from being stolen by malware infecting your computer.</source>
-        <translation>RonPaulCoin iam desinet ut finiat actionem cifrandi.  Memento cassidile cifrare non posse cuncte curare ne tui nummi clepantur ab malis programatibus in tuo computatro.</translation>
+        <source>RealStackCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your realstackcoins from being stolen by malware infecting your computer.</source>
+        <translation>RealStackCoin iam desinet ut finiat actionem cifrandi.  Memento cassidile cifrare non posse cuncte curare ne tui nummi clepantur ab malis programatibus in tuo computatro.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -373,8 +373,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about RonPaulCoin</source>
-        <translation>Monstra informationem de RonPaulCoin</translation>
+        <source>Show information about RealStackCoin</source>
+        <translation>Monstra informationem de RealStackCoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -418,13 +418,13 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a RonPaulCoin address</source>
-        <translation>Mitte nummos ad inscriptionem RonPaulCoin</translation>
+        <source>Send coins to a RealStackCoin address</source>
+        <translation>Mitte nummos ad inscriptionem RealStackCoin</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for RonPaulCoin</source>
-        <translation>Muta configurationis optiones pro RonPaulCoin</translation>
+        <source>Modify configuration options for RealStackCoin</source>
+        <translation>Muta configurationis optiones pro RealStackCoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -454,8 +454,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>RonPaulCoin</source>
-        <translation>RonPaulCoin</translation>
+        <source>RealStackCoin</source>
+        <translation>RealStackCoin</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -479,8 +479,8 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About RonPaulCoin</source>
-        <translation>&amp;Informatio de RonPaulCoin</translation>
+        <source>&amp;About RealStackCoin</source>
+        <translation>&amp;Informatio de RealStackCoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -499,13 +499,13 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your RonPaulCoin addresses to prove you own them</source>
-        <translation>Signa nuntios cum tuis inscriptionibus RonPaulCoin ut demonstres te eas possidere</translation>
+        <source>Sign messages with your RealStackCoin addresses to prove you own them</source>
+        <translation>Signa nuntios cum tuis inscriptionibus RealStackCoin ut demonstres te eas possidere</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified RonPaulCoin addresses</source>
-        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus RonPaulCoin</translation>
+        <source>Verify messages to ensure they were signed with specified RealStackCoin addresses</source>
+        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus RealStackCoin</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -535,13 +535,13 @@ Hoc productum continet programmata composita ab OpenSSL Project pro utendo in Op
     </message>
     <message>
         <location line="+47"/>
-        <source>RonPaulCoin client</source>
-        <translation>RonPaulCoin cliens</translation>
+        <source>RealStackCoin client</source>
+        <translation>RealStackCoin cliens</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to RonPaulCoin network</source>
-        <translation><numerusform>%n activa conexio ad rete RonPaulCoin</numerusform><numerusform>%n activae conexiones ad rete RonPaulCoin</numerusform></translation>
+        <source>%n active connection(s) to RealStackCoin network</source>
+        <translation><numerusform>%n activa conexio ad rete RealStackCoin</numerusform><numerusform>%n activae conexiones ad rete RealStackCoin</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -655,8 +655,8 @@ Inscriptio: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid RonPaulCoin address or malformed URI parameters.</source>
-        <translation>URI intellegi non posse!  Huius causa possit inscriptionem RonPaulCoin non validam aut URI parametra maleformata.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid RealStackCoin address or malformed URI parameters.</source>
+        <translation>URI intellegi non posse!  Huius causa possit inscriptionem RealStackCoin non validam aut URI parametra maleformata.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -670,8 +670,8 @@ Inscriptio: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. RonPaulCoin can no longer continue safely and will quit.</source>
-        <translation>Error fatalis accidit.  RonPaulCoin nondum pergere tute potest, et exibit.</translation>
+        <source>A fatal error occurred. RealStackCoin can no longer continue safely and will quit.</source>
+        <translation>Error fatalis accidit.  RealStackCoin nondum pergere tute potest, et exibit.</translation>
     </message>
 </context>
 <context>
@@ -736,8 +736,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid RonPaulCoin address.</source>
-        <translation>Inscriptio inserta &quot;%1&quot; non valida inscriptio RonPaulCoin est.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid RealStackCoin address.</source>
+        <translation>Inscriptio inserta &quot;%1&quot; non valida inscriptio RealStackCoin est.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -755,8 +755,8 @@ Inscriptio: %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>RonPaulCoin-Qt</source>
-        <translation>RonPaulCoin-Qt</translation>
+        <source>RealStackCoin-Qt</source>
+        <translation>RealStackCoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -818,13 +818,13 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start RonPaulCoin after logging in to the system.</source>
-        <translation>Pelle RonPaulCoin per se postquam in systema inire.</translation>
+        <source>Automatically start RealStackCoin after logging in to the system.</source>
+        <translation>Pelle RealStackCoin per se postquam in systema inire.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start RonPaulCoin on system login</source>
-        <translation>&amp;Pelle RonPaulCoin cum inire systema</translation>
+        <source>&amp;Start RealStackCoin on system login</source>
+        <translation>&amp;Pelle RealStackCoin cum inire systema</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -843,8 +843,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the RonPaulCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Aperi per se portam clientis RonPaulCoin in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
+        <source>Automatically open the RealStackCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Aperi per se portam clientis RealStackCoin in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -853,8 +853,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the RonPaulCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Connecte ad rete RonPaulCoin per SOCKS vicarium (e.g. quando conectens per Tor).</translation>
+        <source>Connect to the RealStackCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Connecte ad rete RealStackCoin per SOCKS vicarium (e.g. quando conectens per Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -928,8 +928,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting RonPaulCoin.</source>
-        <translation>Lingua monstranda utenti hic constitui potest.  Haec configuratio effectiva erit postquam RonPaulCoin iterum initiatum erit.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting RealStackCoin.</source>
+        <translation>Lingua monstranda utenti hic constitui potest.  Haec configuratio effectiva erit postquam RealStackCoin iterum initiatum erit.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -943,8 +943,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show RonPaulCoin addresses in the transaction list or not.</source>
-        <translation>Num monstrare inscriptiones RonPaulCoin in enumeratione transactionum.</translation>
+        <source>Whether to show RealStackCoin addresses in the transaction list or not.</source>
+        <translation>Num monstrare inscriptiones RealStackCoin in enumeratione transactionum.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -995,8 +995,8 @@ Inscriptio: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting RonPaulCoin.</source>
-        <translation>Haec configuratio effectiva erit postquam RonPaulCoin iterum initiatum erit.</translation>
+        <source>This setting will take effect after restarting RealStackCoin.</source>
+        <translation>Haec configuratio effectiva erit postquam RealStackCoin iterum initiatum erit.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1014,8 +1014,8 @@ Inscriptio: %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the RonPaulCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete RonPaulCoin postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the RealStackCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete RealStackCoin postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1068,8 +1068,8 @@ Inscriptio: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start ronpaulcoin: click-to-pay handler</source>
-        <translation>RonPaulCoin incipere non potest: cliccare-ad-pensandum handler</translation>
+        <source>Cannot start realstackcoin: click-to-pay handler</source>
+        <translation>RealStackCoin incipere non potest: cliccare-ad-pensandum handler</translation>
     </message>
 </context>
 <context>
@@ -1218,8 +1218,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the RonPaulCoin-Qt help message to get a list with possible RonPaulCoin command-line options.</source>
-        <translation>Monstra nuntium auxilii RonPaulCoin-Qt ut videas enumerationem possibilium optionum RonPaulCoin mandati initiantis.</translation>
+        <source>Show the RealStackCoin-Qt help message to get a list with possible RealStackCoin command-line options.</source>
+        <translation>Monstra nuntium auxilii RealStackCoin-Qt ut videas enumerationem possibilium optionum RealStackCoin mandati initiantis.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1238,13 +1238,13 @@ Inscriptio: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>RonPaulCoin - Debug window</source>
-        <translation>RonPaulCoin - Fenestra debug</translation>
+        <source>RealStackCoin - Debug window</source>
+        <translation>RealStackCoin - Fenestra debug</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>RonPaulCoin Core</source>
-        <translation>RonPaulCoin Nucleus</translation>
+        <source>RealStackCoin Core</source>
+        <translation>RealStackCoin Nucleus</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1253,8 +1253,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the RonPaulCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Aperi plicam catalogi de RonPaulCoin debug ex activo indice datorum.  Hoc possit pauca secunda pro plicis magnis catalogi.</translation>
+        <source>Open the RealStackCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Aperi plicam catalogi de RealStackCoin debug ex activo indice datorum.  Hoc possit pauca secunda pro plicis magnis catalogi.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1263,8 +1263,8 @@ Inscriptio: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the RonPaulCoin RPC console.</source>
-        <translation>Bene ventio in terminale RPC de RonPaulCoin.</translation>
+        <source>Welcome to the RealStackCoin RPC console.</source>
+        <translation>Bene ventio in terminale RPC de RealStackCoin.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1447,8 +1447,8 @@ Inscriptio: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a RonPaulCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Insero inscriptionem RonPaulCoin (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a RealStackCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Insero inscriptionem RealStackCoin (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1512,8 +1512,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this RonPaulCoin address</source>
-        <translation>Signa nuntium ut demonstres hanc inscriptionem RonPaulCoin a te possessa esse</translation>
+        <source>Sign the message to prove you own this RealStackCoin address</source>
+        <translation>Signa nuntium ut demonstres hanc inscriptionem RealStackCoin a te possessa esse</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1548,8 +1548,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified RonPaulCoin address</source>
-        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione RonPaulCoin</translation>
+        <source>Verify the message to ensure it was signed with the specified RealStackCoin address</source>
+        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione RealStackCoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1564,8 +1564,8 @@ Inscriptio: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a RonPaulCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Insere inscriptionem RonPaulCoin (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a RealStackCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Insere inscriptionem RealStackCoin (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1574,8 +1574,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter RonPaulCoin signature</source>
-        <translation>Insere signationem RonPaulCoin</translation>
+        <source>Enter RealStackCoin signature</source>
+        <translation>Insere signationem RealStackCoin</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1648,8 +1648,8 @@ Inscriptio: %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The RonPaulCoin developers</source>
-        <translation>RonPaulCoin curatores</translation>
+        <source>The RealStackCoin developers</source>
+        <translation>RealStackCoin curatores</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2186,8 +2186,8 @@ Inscriptio: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>RonPaulCoin version</source>
-        <translation>Versio de RonPaulCoin</translation>
+        <source>RealStackCoin version</source>
+        <translation>Versio de RealStackCoin</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2196,8 +2196,8 @@ Inscriptio: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or ronpaulcoind</source>
-        <translation>Mitte mandatum ad -server vel ronpaulcoind</translation>
+        <source>Send command to -server or realstackcoind</source>
+        <translation>Mitte mandatum ad -server vel realstackcoind</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2216,13 +2216,13 @@ Inscriptio: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: ronpaulcoin.conf)</source>
-        <translation>Specifica configurationis plicam (praedefinitum: ronpaulcoin.conf)</translation>
+        <source>Specify configuration file (default: realstackcoin.conf)</source>
+        <translation>Specifica configurationis plicam (praedefinitum: realstackcoin.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: ronpaulcoind.pid)</source>
-        <translation>Specifica pid plicam (praedefinitum: ronpaulcoin.pid)</translation>
+        <source>Specify pid file (default: realstackcoind.pid)</source>
+        <translation>Specifica pid plicam (praedefinitum: realstackcoin.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2299,24 +2299,24 @@ Inscriptio: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=ronpaulcoinrpc
+rpcuser=realstackcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;RealStackCoin Alert&quot; admin@foo.com
 </source>
         <translation>%s, necesse est te rpcpassword constituere in plica configurationis:
 %s
 Hortatur te hanc fortuitam tesseram uti:
-rpcuser=ronpaulcoinrpc
+rpcuser=realstackcoinrpc
 rpcpassword=%s
 (non est necesse te hanc tesseram meminisse)
 Nomen usoris et tessera eadem esse NON POSSUNT.
 Si plica non existit, eam crea cum permissionibus ut eius dominus tantum sinitur id legere.
 Quoque hortatur alertnotify constituere ut tu notificetur de problematibus;
-exempli gratia: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Notificatio&quot; admin@foo.com
+exempli gratia: alertnotify=echo %%s | mail -s &quot;RealStackCoin Notificatio&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2331,8 +2331,8 @@ exempli gratia: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Notificatio&quo
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. RonPaulCoin is probably already running.</source>
-        <translation>Non posse serare datorum indicem %s.  RonPaulCoin probabiliter iam operatur.</translation>
+        <source>Cannot obtain a lock on data directory %s. RealStackCoin is probably already running.</source>
+        <translation>Non posse serare datorum indicem %s.  RealStackCoin probabiliter iam operatur.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2376,8 +2376,8 @@ exempli gratia: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Notificatio&quo
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong RonPaulCoin will not work properly.</source>
-        <translation>Monitio: Sodes cura ut dies tempusque computatri tui recti sunt!  Si horologium tuum pravum est, RonPaulCoin non proprie fungetur.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong RealStackCoin will not work properly.</source>
+        <translation>Monitio: Sodes cura ut dies tempusque computatri tui recti sunt!  Si horologium tuum pravum est, RealStackCoin non proprie fungetur.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2626,8 +2626,8 @@ exempli gratia: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Notificatio&quo
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the RonPaulCoin Wiki for SSL setup instructions)</source>
-        <translation>Optiones SSL: (vide vici de RonPaulCoin pro instructionibus SSL configurationis)</translation>
+        <source>SSL options: (see the RealStackCoin Wiki for SSL setup instructions)</source>
+        <translation>Optiones SSL: (vide vici de RealStackCoin pro instructionibus SSL configurationis)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2816,13 +2816,13 @@ exempli gratia: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Notificatio&quo
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of RonPaulCoin</source>
-        <translation>Error legendi wallet.dat: Cassidili necesse est recentior versio RonPaulCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of RealStackCoin</source>
+        <translation>Error legendi wallet.dat: Cassidili necesse est recentior versio RealStackCoin</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart RonPaulCoin to complete</source>
-        <translation>Cassidili necesse erat rescribi: Repelle RonPaulCoin ut compleas</translation>
+        <source>Wallet needed to be rewritten: restart RealStackCoin to complete</source>
+        <translation>Cassidili necesse erat rescribi: Repelle RealStackCoin ut compleas</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2881,8 +2881,8 @@ exempli gratia: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Notificatio&quo
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. RonPaulCoin is probably already running.</source>
-        <translation>Non posse conglutinare ad %s in hoc cumputatro.  RonPaulCoin probabiliter iam operatur.</translation>
+        <source>Unable to bind to %s on this computer. RealStackCoin is probably already running.</source>
+        <translation>Non posse conglutinare ad %s in hoc cumputatro.  RealStackCoin probabiliter iam operatur.</translation>
     </message>
     <message>
         <location line="+64"/>

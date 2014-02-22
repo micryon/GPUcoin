@@ -6,7 +6,7 @@ Release Process
 ###update (commit) version in sources
 
 
-	ronpaulcoin-qt.pro
+	realstackcoin-qt.pro
 	contrib/verifysfbinaries/verify.sh
 	doc/README*
 	share/setup.nsi
@@ -24,7 +24,7 @@ Release Process
 
 ##perform gitian builds
 
- From a directory containing the ronpaulcoin source, gitian-builder and gitian.sigs
+ From a directory containing the realstackcoin source, gitian-builder and gitian.sigs
   
 	export SIGNER=(your gitian key, ie bluematt, sipa, etc)
 	export VERSION=0.8.0
@@ -42,54 +42,54 @@ Release Process
 	wget 'http://downloads.sourceforge.net/project/boost/boost/1.50.0/boost_1_50_0.tar.bz2'
 	wget 'http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.3.tar.gz'
 	cd ..
-	./bin/gbuild ../ronpaulcoin/contrib/gitian-descriptors/boost-win32.yml
+	./bin/gbuild ../realstackcoin/contrib/gitian-descriptors/boost-win32.yml
 	mv build/out/boost-win32-1.50.0-gitian2.zip inputs/
-	./bin/gbuild ../ronpaulcoin/contrib/gitian-descriptors/qt-win32.yml
+	./bin/gbuild ../realstackcoin/contrib/gitian-descriptors/qt-win32.yml
 	mv build/out/qt-win32-4.8.3-gitian-r1.zip inputs/
-	./bin/gbuild ../ronpaulcoin/contrib/gitian-descriptors/deps-win32.yml
-	mv build/out/ronpaulcoin-deps-0.0.5.zip inputs/
+	./bin/gbuild ../realstackcoin/contrib/gitian-descriptors/deps-win32.yml
+	mv build/out/realstackcoin-deps-0.0.5.zip inputs/
 
- Build ronpaulcoind and ronpaulcoin-qt on Linux32, Linux64, and Win32:
+ Build realstackcoind and realstackcoin-qt on Linux32, Linux64, and Win32:
   
-	./bin/gbuild --commit ronpaulcoin=v${VERSION} ../ronpaulcoin/contrib/gitian-descriptors/gitian.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION} --destination ../gitian.sigs/ ../ronpaulcoin/contrib/gitian-descriptors/gitian.yml
+	./bin/gbuild --commit realstackcoin=v${VERSION} ../realstackcoin/contrib/gitian-descriptors/gitian.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION} --destination ../gitian.sigs/ ../realstackcoin/contrib/gitian-descriptors/gitian.yml
 	pushd build/out
-	zip -r ronpaulcoin-${VERSION}-linux-gitian.zip *
-	mv ronpaulcoin-${VERSION}-linux-gitian.zip ../../
+	zip -r realstackcoin-${VERSION}-linux-gitian.zip *
+	mv realstackcoin-${VERSION}-linux-gitian.zip ../../
 	popd
-	./bin/gbuild --commit ronpaulcoin=v${VERSION} ../ronpaulcoin/contrib/gitian-descriptors/gitian-win32.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win32 --destination ../gitian.sigs/ ../ronpaulcoin/contrib/gitian-descriptors/gitian-win32.yml
+	./bin/gbuild --commit realstackcoin=v${VERSION} ../realstackcoin/contrib/gitian-descriptors/gitian-win32.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win32 --destination ../gitian.sigs/ ../realstackcoin/contrib/gitian-descriptors/gitian-win32.yml
 	pushd build/out
-	zip -r ronpaulcoin-${VERSION}-win32-gitian.zip *
-	mv ronpaulcoin-${VERSION}-win32-gitian.zip ../../
+	zip -r realstackcoin-${VERSION}-win32-gitian.zip *
+	mv realstackcoin-${VERSION}-win32-gitian.zip ../../
 	popd
 
   Build output expected:
 
-  1. linux 32-bit and 64-bit binaries + source (ronpaulcoin-${VERSION}-linux-gitian.zip)
-  2. windows 32-bit binary, installer + source (ronpaulcoin-${VERSION}-win32-gitian.zip)
+  1. linux 32-bit and 64-bit binaries + source (realstackcoin-${VERSION}-linux-gitian.zip)
+  2. windows 32-bit binary, installer + source (realstackcoin-${VERSION}-win32-gitian.zip)
   3. Gitian signatures (in gitian.sigs/${VERSION}[-win32]/(your gitian key)/
 
 repackage gitian builds for release as stand-alone zip/tar/installer exe
 
 **Linux .tar.gz:**
 
-	unzip ronpaulcoin-${VERSION}-linux-gitian.zip -d ronpaulcoin-${VERSION}-linux
-	tar czvf ronpaulcoin-${VERSION}-linux.tar.gz ronpaulcoin-${VERSION}-linux
-	rm -rf ronpaulcoin-${VERSION}-linux
+	unzip realstackcoin-${VERSION}-linux-gitian.zip -d realstackcoin-${VERSION}-linux
+	tar czvf realstackcoin-${VERSION}-linux.tar.gz realstackcoin-${VERSION}-linux
+	rm -rf realstackcoin-${VERSION}-linux
 
 **Windows .zip and setup.exe:**
 
-	unzip ronpaulcoin-${VERSION}-win32-gitian.zip -d ronpaulcoin-${VERSION}-win32
-	mv ronpaulcoin-${VERSION}-win32/ronpaulcoin-*-setup.exe .
-	zip -r ronpaulcoin-${VERSION}-win32.zip bitcoin-${VERSION}-win32
-	rm -rf ronpaulcoin-${VERSION}-win32
+	unzip realstackcoin-${VERSION}-win32-gitian.zip -d realstackcoin-${VERSION}-win32
+	mv realstackcoin-${VERSION}-win32/realstackcoin-*-setup.exe .
+	zip -r realstackcoin-${VERSION}-win32.zip bitcoin-${VERSION}-win32
+	rm -rf realstackcoin-${VERSION}-win32
 
 **Perform Mac build:**
 
   OSX binaries are created by Gavin Andresen on a 32-bit, OSX 10.6 machine.
 
-	qmake RELEASE=1 USE_UPNP=1 USE_QRCODE=1 ronpaulcoin-qt.pro
+	qmake RELEASE=1 USE_UPNP=1 USE_QRCODE=1 realstackcoin-qt.pro
 	make
 	export QTDIR=/opt/local/share/qt4  # needed to find translations/qt_*.qm files
 	T=$(contrib/qt_translations.py $QTDIR/translations src/qt/locale)
@@ -107,14 +107,14 @@ repackage gitian builds for release as stand-alone zip/tar/installer exe
 
 * create SHA256SUMS for builds, and PGP-sign it
 
-* update ronpaulcoin.org version
+* update realstackcoin.org version
   make sure all OS download links go to the right versions
 
 * update forum version
 
 * update wiki download links
 
-* update wiki changelog: [https://en.ronpaulcoin.it/wiki/Changelog](https://en.bitcoin.it/wiki/Changelog)
+* update wiki changelog: [https://en.realstackcoin.it/wiki/Changelog](https://en.bitcoin.it/wiki/Changelog)
 
 Commit your signature to gitian.sigs:
 
@@ -129,32 +129,32 @@ Commit your signature to gitian.sigs:
 
 ### After 3 or more people have gitian-built, repackage gitian-signed zips:
 
-From a directory containing ronpaulcoin source, gitian.sigs and gitian zips
+From a directory containing realstackcoin source, gitian.sigs and gitian zips
 
 	export VERSION=0.5.1
-	mkdir ronpaulcoin-${VERSION}-linux-gitian
-	pushd ronpaulcoin-${VERSION}-linux-gitian
-	unzip ../ronpaulcoin-${VERSION}-linux-gitian.zip
+	mkdir realstackcoin-${VERSION}-linux-gitian
+	pushd realstackcoin-${VERSION}-linux-gitian
+	unzip ../realstackcoin-${VERSION}-linux-gitian.zip
 	mkdir gitian
-	cp ../ronpaulcoin/contrib/gitian-downloader/*.pgp ./gitian/
+	cp ../realstackcoin/contrib/gitian-downloader/*.pgp ./gitian/
 	for signer in $(ls ../gitian.sigs/${VERSION}/); do
-	 cp ../gitian.sigs/${VERSION}/${signer}/ronpaulcoin-build.assert ./gitian/${signer}-build.assert
-	 cp ../gitian.sigs/${VERSION}/${signer}/ronpaulcoin-build.assert.sig ./gitian/${signer}-build.assert.sig
+	 cp ../gitian.sigs/${VERSION}/${signer}/realstackcoin-build.assert ./gitian/${signer}-build.assert
+	 cp ../gitian.sigs/${VERSION}/${signer}/realstackcoin-build.assert.sig ./gitian/${signer}-build.assert.sig
 	done
-	zip -r ronpaulcoin-${VERSION}-linux-gitian.zip *
-	cp ronpaulcoin-${VERSION}-linux-gitian.zip ../
+	zip -r realstackcoin-${VERSION}-linux-gitian.zip *
+	cp realstackcoin-${VERSION}-linux-gitian.zip ../
 	popd
-	mkdir ronpaulcoin-${VERSION}-win32-gitian
-	pushd ronpaulcoin-${VERSION}-win32-gitian
-	unzip ../ronpaulcoin-${VERSION}-win32-gitian.zip
+	mkdir realstackcoin-${VERSION}-win32-gitian
+	pushd realstackcoin-${VERSION}-win32-gitian
+	unzip ../realstackcoin-${VERSION}-win32-gitian.zip
 	mkdir gitian
-	cp ../ronpaulcoin/contrib/gitian-downloader/*.pgp ./gitian/
+	cp ../realstackcoin/contrib/gitian-downloader/*.pgp ./gitian/
 	for signer in $(ls ../gitian.sigs/${VERSION}-win32/); do
-	 cp ../gitian.sigs/${VERSION}-win32/${signer}/ronpaulcoin-build.assert ./gitian/${signer}-build.assert
-	 cp ../gitian.sigs/${VERSION}-win32/${signer}/ronpaulcoin-build.assert.sig ./gitian/${signer}-build.assert.sig
+	 cp ../gitian.sigs/${VERSION}-win32/${signer}/realstackcoin-build.assert ./gitian/${signer}-build.assert
+	 cp ../gitian.sigs/${VERSION}-win32/${signer}/realstackcoin-build.assert.sig ./gitian/${signer}-build.assert.sig
 	done
-	zip -r ronpaulcoin-${VERSION}-win32-gitian.zip *
-	cp ronpaulcoin-${VERSION}-win32-gitian.zip ../
+	zip -r realstackcoin-${VERSION}-win32-gitian.zip *
+	cp realstackcoin-${VERSION}-win32-gitian.zip ../
 	popd
 
 - Upload gitian zips to SourceForge

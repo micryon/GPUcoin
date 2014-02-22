@@ -33,7 +33,7 @@ unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
 uint256 hashGenesisBlock("0x12e05e8d4a8258aed79e113ee429c5194ee1c8999f50df176ecea97380d474ab");
-static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // RonPaulCoin: starting difficulty is 1 / 2^12
+static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // RealStackCoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 uint256 nBestChainWork = 0;
@@ -65,7 +65,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "RonPaulCoin Signed Message:\n";
+const string strMessageMagic = "RealStackCoin Signed Message:\n";
 
 double dHashesPerSec = 0.0;
 int64 nHPSTimerStart = 0;
@@ -356,7 +356,7 @@ unsigned int LimitOrphanTxSize(unsigned int nMaxOrphans)
 
 bool CTxOut::IsDust() const
 {
-    // RonPaulCoin: IsDust() detection disabled, allows any valid dust to be relayed.
+    // RealStackCoin: IsDust() detection disabled, allows any valid dust to be relayed.
     // The fees imposed on each dust txo is considered sufficient spam deterrant. 
     return false;
 }
@@ -613,7 +613,7 @@ int64 CTransaction::GetMinFee(unsigned int nBlockSize, bool fAllowFree,
             nMinFee = 0;
     }
 
-    // RonPaulCoin
+    // RealStackCoin
     // To limit dust spam, add nBaseFee for each output less than DUST_SOFT_LIMIT
     BOOST_FOREACH(const CTxOut& txout, vout)
         if (txout.nValue < DUST_SOFT_LIMIT)
@@ -1071,14 +1071,14 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     	nSubsidy =  6720000000*COIN;
     else
     // subsidy is halved every month
-    	nSubsidy >>= (nHeight / 21000); // RonPaulCoin: 1051k blocks in ~4 years
+    	nSubsidy >>= (nHeight / 21000); // RealStackCoin: 1051k blocks in ~4 years
 
     return nSubsidy + nFees;
 }
 
 
-int64 nTargetTimespan = 1.0 * 24 * 60 * 60; // RonPaulCoin: 1.0 day
-static const int64 nTargetSpacing = 2.0 * 60; // RonPaulCoin: 2.0 minutes
+int64 nTargetTimespan = 1.0 * 24 * 60 * 60; // RealStackCoin: 1.0 day
+static const int64 nTargetSpacing = 2.0 * 60; // RealStackCoin: 2.0 minutes
 
 //
 // minimum amount of work that could possibly be required nTime after
@@ -2131,7 +2131,7 @@ bool CBlock::CheckBlock(CValidationState &state, bool fCheckPOW, bool fCheckMerk
     if (vtx.empty() || vtx.size() > MAX_BLOCK_SIZE || ::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION) > MAX_BLOCK_SIZE)
         return state.DoS(100, error("CheckBlock() : size limits failed"));
 
-    // RonPaulCoin: Special short-term limits to avoid 10,000 BDB lock limit:
+    // RealStackCoin: Special short-term limits to avoid 10,000 BDB lock limit:
     if (GetBlockTime() < 1376568000)  // stop enforcing 15 August 2013 00:00:00
     {
         // Rule is: #unique txids referenced <= 4,500
@@ -2299,7 +2299,7 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
 
 bool CBlockIndex::IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired, unsigned int nToCheck)
 {
-    // RonPaulCoin: temporarily disable v2 block lockin until we are ready for v2 transition
+    // RealStackCoin: temporarily disable v2 block lockin until we are ready for v2 transition
     return false;
     unsigned int nFound = 0;
     for (unsigned int i = 0; i < nToCheck && nFound < nRequired && pstart != NULL; i++)
@@ -3204,7 +3204,7 @@ bool static AlreadyHave(const CInv& inv)
 // The message start string is designed to be unlikely to occur in normal data.
 // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 // a large 4-byte int at any alignment.
-unsigned char pchMessageStart[4] = { 0xfb, 0xc0, 0xb6, 0xdb }; // RonPaulCoin: increase each by adding 2 to bitcoin's value.
+unsigned char pchMessageStart[4] = { 0xfb, 0xc0, 0xb6, 0xdb }; // RealStackCoin: increase each by adding 2 to bitcoin's value.
 
 
 void static ProcessGetData(CNode* pfrom)
@@ -4276,7 +4276,7 @@ bool SendMessages(CNode* pto, bool fSendTrickle)
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// RonPaulCoinMiner
+// RealStackCoinMiner
 //
 
 int static FormatHashBlocks(void* pbuffer, unsigned int len)
@@ -4689,7 +4689,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         return false;
 
     //// debug print
-    printf("RonPaulCoinMiner:\n");
+    printf("RealStackCoinMiner:\n");
     printf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex().c_str(), hashTarget.GetHex().c_str());
     pblock->print();
     printf("generated %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue).c_str());
@@ -4698,7 +4698,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != hashBestChain)
-            return error("RonPaulCoinMiner : generated block is stale");
+            return error("RealStackCoinMiner : generated block is stale");
 
         // Remove key from key pool
         reservekey.KeepKey();
@@ -4712,17 +4712,17 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         // Process this block the same as if we had received it from another node
         CValidationState state;
         if (!ProcessBlock(state, NULL, pblock))
-            return error("RonPaulCoinMiner : ProcessBlock, block not accepted");
+            return error("RealStackCoinMiner : ProcessBlock, block not accepted");
     }
 
     return true;
 }
 
-void static RonPaulCoinMiner(CWallet *pwallet)
+void static RealStackCoinMiner(CWallet *pwallet)
 {
-    printf("RonPaulCoinMiner started\n");
+    printf("RealStackCoinMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("ronpaulcoin-miner");
+    RenameThread("realstackcoin-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);
@@ -4744,7 +4744,7 @@ void static RonPaulCoinMiner(CWallet *pwallet)
         CBlock *pblock = &pblocktemplate->block;
         IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
-        printf("Running RonPaulCoinMiner with %"PRIszu" transactions in block (%u bytes)\n", pblock->vtx.size(),
+        printf("Running RealStackCoinMiner with %"PRIszu" transactions in block (%u bytes)\n", pblock->vtx.size(),
                ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
         //
@@ -4856,7 +4856,7 @@ void static RonPaulCoinMiner(CWallet *pwallet)
     } }
     catch (boost::thread_interrupted)
     {
-        printf("RonPaulCoinMiner terminated\n");
+        printf("RealStackCoinMiner terminated\n");
         throw;
     }
 }
@@ -4881,7 +4881,7 @@ void GenerateBitcoins(bool fGenerate, CWallet* pwallet)
 
     minerThreads = new boost::thread_group();
     for (int i = 0; i < nThreads; i++)
-        minerThreads->create_thread(boost::bind(&RonPaulCoinMiner, pwallet));
+        minerThreads->create_thread(boost::bind(&RealStackCoinMiner, pwallet));
 }
 
 // Amount compression:

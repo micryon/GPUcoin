@@ -20,6 +20,9 @@ Wof-work algorithm:
  - 1 000 000 coin per block
  - KGW implementation
 
+default Port 7382  / 1 for test net
+default RPC port 7381 
+
 
 Testing
 -------

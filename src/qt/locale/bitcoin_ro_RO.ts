@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About RonPaulCoin</source>
-        <translation>Despre RonPaulCoin</translation>
+        <source>About RealStackCoin</source>
+        <translation>Despre RealStackCoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;RonPaulCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;RonPaulCoin&lt;/b&gt; versiunea</translation>
+        <source>&lt;b&gt;RealStackCoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;RealStackCoin&lt;/b&gt; versiunea</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -29,7 +29,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+0"/>
-        <source>The RonPaulCoin developers</source>
+        <source>The RealStackCoin developers</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -62,8 +62,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your RonPaulCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Acestea sunt adresele dumneavoastră RonPaulCoin pentru a primi plăţi. Dacă doriţi, puteți da o adresa diferită fiecărui expeditor, pentru a putea ţine evidenţa plăţilor.</translation>
+        <source>These are your RealStackCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Acestea sunt adresele dumneavoastră RealStackCoin pentru a primi plăţi. Dacă doriţi, puteți da o adresa diferită fiecărui expeditor, pentru a putea ţine evidenţa plăţilor.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -77,7 +77,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a RonPaulCoin address</source>
+        <source>Sign a message to prove you own a RealStackCoin address</source>
         <translation>Semneaza mesajul pentru a dovedi ca detii aceasta adresa Bitocin</translation>
     </message>
     <message>
@@ -102,8 +102,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified RonPaulCoin address</source>
-        <translation>Verifica mesajul pentru a te asigura ca a fost insemnat cu o adresa ronpaulcoin specifica</translation>
+        <source>Verify a message to ensure it was signed with a specified RealStackCoin address</source>
+        <translation>Verifica mesajul pentru a te asigura ca a fost insemnat cu o adresa realstackcoin specifica</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -117,7 +117,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your RonPaulCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your RealStackCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -270,8 +270,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>RonPaulCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ronpaulcoins from being stolen by malware infecting your computer.</source>
-        <translation>RonPaulCoin se va închide acum pentru a termina procesul de criptare. Amintiți-vă că criptarea portofelului dumneavoastră nu poate proteja în totalitate ronpaulcoins dvs. de a fi furate de intentii rele.</translation>
+        <source>RealStackCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your realstackcoins from being stolen by malware infecting your computer.</source>
+        <translation>RealStackCoin se va închide acum pentru a termina procesul de criptare. Amintiți-vă că criptarea portofelului dumneavoastră nu poate proteja în totalitate realstackcoins dvs. de a fi furate de intentii rele.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -369,8 +369,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about RonPaulCoin</source>
-        <translation>Informaţii despre RonPaulCoin</translation>
+        <source>Show information about RealStackCoin</source>
+        <translation>Informaţii despre RealStackCoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -414,13 +414,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a RonPaulCoin address</source>
-        <translation>&amp;Trimiteţi RonPaulCoin către o anumită adresă</translation>
+        <source>Send coins to a RealStackCoin address</source>
+        <translation>&amp;Trimiteţi RealStackCoin către o anumită adresă</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for RonPaulCoin</source>
-        <translation>Modifică setările pentru RonPaulCoin</translation>
+        <source>Modify configuration options for RealStackCoin</source>
+        <translation>Modifică setările pentru RealStackCoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -450,8 +450,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>RonPaulCoin</source>
-        <translation>RonPaulCoin</translation>
+        <source>RealStackCoin</source>
+        <translation>RealStackCoin</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -475,8 +475,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About RonPaulCoin</source>
-        <translation>&amp;Despre RonPaulCoin</translation>
+        <source>&amp;About RealStackCoin</source>
+        <translation>&amp;Despre RealStackCoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -495,12 +495,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your RonPaulCoin addresses to prove you own them</source>
+        <source>Sign messages with your RealStackCoin addresses to prove you own them</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified RonPaulCoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified RealStackCoin addresses</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -531,13 +531,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+47"/>
-        <source>RonPaulCoin client</source>
-        <translation>Client RonPaulCoin</translation>
+        <source>RealStackCoin client</source>
+        <translation>Client RealStackCoin</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to RonPaulCoin network</source>
-        <translation><numerusform>%n active connections to RonPaulCoin network</numerusform><numerusform>%n active connections to RonPaulCoin network</numerusform><numerusform>%n active connections to RonPaulCoin network</numerusform></translation>
+        <source>%n active connection(s) to RealStackCoin network</source>
+        <translation><numerusform>%n active connections to RealStackCoin network</numerusform><numerusform>%n active connections to RealStackCoin network</numerusform><numerusform>%n active connections to RealStackCoin network</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -647,7 +647,7 @@ Address: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid RonPaulCoin address or malformed URI parameters.</source>
+        <source>URI can not be parsed! This can be caused by an invalid RealStackCoin address or malformed URI parameters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -662,7 +662,7 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. RonPaulCoin can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. RealStackCoin can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -728,8 +728,8 @@ Address: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid RonPaulCoin address.</source>
-        <translation>Adresa introdusă &quot;%1&quot; nu este o adresă ronpaulcoin valabilă.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid RealStackCoin address.</source>
+        <translation>Adresa introdusă &quot;%1&quot; nu este o adresă realstackcoin valabilă.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -747,8 +747,8 @@ Address: %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>RonPaulCoin-Qt</source>
-        <translation>RonPaulCoin-Qt</translation>
+        <source>RealStackCoin-Qt</source>
+        <translation>RealStackCoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -810,13 +810,13 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start RonPaulCoin after logging in to the system.</source>
-        <translation>Porneşte automat programul RonPaulCoin la pornirea computerului.</translation>
+        <source>Automatically start RealStackCoin after logging in to the system.</source>
+        <translation>Porneşte automat programul RealStackCoin la pornirea computerului.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start RonPaulCoin on system login</source>
-        <translation>&amp;S Porneşte RonPaulCoin la pornirea sistemului</translation>
+        <source>&amp;Start RealStackCoin on system login</source>
+        <translation>&amp;S Porneşte RealStackCoin la pornirea sistemului</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -835,8 +835,8 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the RonPaulCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Deschide automat în router portul aferent clientului RonPaulCoin. Funcţionează doar în cazul în care routerul e compatibil UPnP şi opţiunea e activată.</translation>
+        <source>Automatically open the RealStackCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Deschide automat în router portul aferent clientului RealStackCoin. Funcţionează doar în cazul în care routerul e compatibil UPnP şi opţiunea e activată.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -845,8 +845,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the RonPaulCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Conectare la reţeaua RonPaulCoin folosind un proxy SOCKS (de exemplu, când conexiunea se stabileşte prin reţeaua Tor)</translation>
+        <source>Connect to the RealStackCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Conectare la reţeaua RealStackCoin folosind un proxy SOCKS (de exemplu, când conexiunea se stabileşte prin reţeaua Tor)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -920,8 +920,8 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting RonPaulCoin.</source>
-        <translation>Limba interfeței utilizatorului poate fi setat aici. Această setare va avea efect după repornirea RonPaulCoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting RealStackCoin.</source>
+        <translation>Limba interfeței utilizatorului poate fi setat aici. Această setare va avea efect după repornirea RealStackCoin.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -931,12 +931,12 @@ Address: %4
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Alege subdiviziunea folosită la afişarea interfeţei şi la trimiterea de ronpaulcoin.</translation>
+        <translation>Alege subdiviziunea folosită la afişarea interfeţei şi la trimiterea de realstackcoin.</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show RonPaulCoin addresses in the transaction list or not.</source>
-        <translation>Vezi dacă adresele RonPaulCoin sunt în lista de tranzacție sau nu</translation>
+        <source>Whether to show RealStackCoin addresses in the transaction list or not.</source>
+        <translation>Vezi dacă adresele RealStackCoin sunt în lista de tranzacție sau nu</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -987,13 +987,13 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting RonPaulCoin.</source>
+        <source>This setting will take effect after restarting RealStackCoin.</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location line="+29"/>
         <source>The supplied proxy address is invalid.</source>
-        <translation>Adresa ronpaulcoin pe care a-ti specificat-o este invalida</translation>
+        <translation>Adresa realstackcoin pe care a-ti specificat-o este invalida</translation>
     </message>
 </context>
 <context>
@@ -1006,8 +1006,8 @@ Address: %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the RonPaulCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informațiile afișate pot fi expirate. Portofelul tău se sincronizează automat cu rețeaua RonPaulCoin după ce o conexiune este stabilita, dar acest proces nu a fost finalizat încă.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the RealStackCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Informațiile afișate pot fi expirate. Portofelul tău se sincronizează automat cu rețeaua RealStackCoin după ce o conexiune este stabilita, dar acest proces nu a fost finalizat încă.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1060,7 +1060,7 @@ Address: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start ronpaulcoin: click-to-pay handler</source>
+        <source>Cannot start realstackcoin: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1210,8 +1210,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the RonPaulCoin-Qt help message to get a list with possible RonPaulCoin command-line options.</source>
-        <translation>Arata mesajul de ajutor RonPaulCoin-QT pentru a obtine o lista cu posibilele optiuni ale comenzilor RonPaulCoin</translation>
+        <source>Show the RealStackCoin-Qt help message to get a list with possible RealStackCoin command-line options.</source>
+        <translation>Arata mesajul de ajutor RealStackCoin-QT pentru a obtine o lista cu posibilele optiuni ale comenzilor RealStackCoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1230,13 +1230,13 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>RonPaulCoin - Debug window</source>
-        <translation>RonPaulCoin-Fereastra pentru debug</translation>
+        <source>RealStackCoin - Debug window</source>
+        <translation>RealStackCoin-Fereastra pentru debug</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>RonPaulCoin Core</source>
-        <translation>RonPaulCoin Core</translation>
+        <source>RealStackCoin Core</source>
+        <translation>RealStackCoin Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1245,7 +1245,7 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the RonPaulCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the RealStackCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation>Deschide logurile debug din directorul curent. Aceasta poate dura cateva secunde pentru fisierele mai mari</translation>
     </message>
     <message>
@@ -1255,8 +1255,8 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the RonPaulCoin RPC console.</source>
-        <translation>Bun venit la consola ronpaulcoin RPC</translation>
+        <source>Welcome to the RealStackCoin RPC console.</source>
+        <translation>Bun venit la consola realstackcoin RPC</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1281,7 +1281,7 @@ Address: %4
         <location line="+5"/>
         <location line="+5"/>
         <source>Send Coins</source>
-        <translation>Trimite RonPaulCoin</translation>
+        <translation>Trimite RealStackCoin</translation>
     </message>
     <message>
         <location line="+50"/>
@@ -1331,7 +1331,7 @@ Address: %4
     <message>
         <location line="+5"/>
         <source>Confirm send coins</source>
-        <translation>Confirmaţi trimiterea de ronpaulcoin</translation>
+        <translation>Confirmaţi trimiterea de realstackcoin</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1376,7 +1376,7 @@ Address: %4
     <message>
         <location line="+5"/>
         <source>Error: The transaction was rejected. This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>Eroare: Tranyacţia a fost respinsă.  Acesta poate fi rezultatul cheltuirii prealabile a unei sume de ronpaulcoin din portofelul electronic, ca în cazul folosirii unei copii a fisierului wallet.dat, în care s-au efectuat tranzacţii neînregistrate în fisierul curent.</translation>
+        <translation>Eroare: Tranyacţia a fost respinsă.  Acesta poate fi rezultatul cheltuirii prealabile a unei sume de realstackcoin din portofelul electronic, ca în cazul folosirii unei copii a fisierului wallet.dat, în care s-au efectuat tranzacţii neînregistrate în fisierul curent.</translation>
     </message>
 </context>
 <context>
@@ -1439,8 +1439,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a RonPaulCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Introduceţi o adresă RonPaulCoin (de exemplu: Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a RealStackCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Introduceţi o adresă RealStackCoin (de exemplu: Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1463,7 +1463,7 @@ Address: %4
     <message>
         <location line="+18"/>
         <source>The address to sign the message with (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Introduceţi o adresă RonPaulCoin (de exemplu: Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <translation>Introduceţi o adresă RealStackCoin (de exemplu: Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1504,8 +1504,8 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this RonPaulCoin address</source>
-        <translation>Semneaza mesajul pentru a dovedi ca detii acesta adresa RonPaulCoin</translation>
+        <source>Sign the message to prove you own this RealStackCoin address</source>
+        <translation>Semneaza mesajul pentru a dovedi ca detii acesta adresa RealStackCoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1536,12 +1536,12 @@ Address: %4
     <message>
         <location line="+21"/>
         <source>The address the message was signed with (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Introduceţi o adresă RonPaulCoin (de exemplu: Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <translation>Introduceţi o adresă RealStackCoin (de exemplu: Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified RonPaulCoin address</source>
-        <translation>Verifica mesajul pentru a fi sigur ca a fost semnat cu adresa RonPaulCoin specifica</translation>
+        <source>Verify the message to ensure it was signed with the specified RealStackCoin address</source>
+        <translation>Verifica mesajul pentru a fi sigur ca a fost semnat cu adresa RealStackCoin specifica</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1556,8 +1556,8 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a RonPaulCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Introduceţi o adresă RonPaulCoin (de exemplu: Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a RealStackCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Introduceţi o adresă RealStackCoin (de exemplu: Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1566,7 +1566,7 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter RonPaulCoin signature</source>
+        <source>Enter RealStackCoin signature</source>
         <translation>Introduce semnatura bitocin</translation>
     </message>
     <message>
@@ -1640,7 +1640,7 @@ Address: %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The RonPaulCoin developers</source>
+        <source>The RealStackCoin developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1775,7 +1775,7 @@ Address: %4
     <message>
         <location line="+3"/>
         <source>Generated coins must mature 120 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>Monedele ronpaulcoin generate se pot cheltui dupa parcurgerea a 120 de blocuri.  După ce a fost generat, s-a propagat în reţea, urmând să fie adăugat lanţului de blocuri.  Dacă nu poate fi inclus in lanţ, starea sa va deveni &quot;neacceptat&quot; si nu va putea fi folosit la tranzacţii.  Acest fenomen se întâmplă atunci cand un alt nod a generat un bloc la o diferenţa de câteva secunde.</translation>
+        <translation>Monedele realstackcoin generate se pot cheltui dupa parcurgerea a 120 de blocuri.  După ce a fost generat, s-a propagat în reţea, urmând să fie adăugat lanţului de blocuri.  Dacă nu poate fi inclus in lanţ, starea sa va deveni &quot;neacceptat&quot; si nu va putea fi folosit la tranzacţii.  Acest fenomen se întâmplă atunci cand un alt nod a generat un bloc la o diferenţa de câteva secunde.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -2128,7 +2128,7 @@ Address: %4
     <message>
         <location filename="../walletmodel.cpp" line="+193"/>
         <source>Send Coins</source>
-        <translation>Trimite RonPaulCoin</translation>
+        <translation>Trimite RealStackCoin</translation>
     </message>
 </context>
 <context>
@@ -2178,8 +2178,8 @@ Address: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>RonPaulCoin version</source>
-        <translation>versiunea RonPaulCoin</translation>
+        <source>RealStackCoin version</source>
+        <translation>versiunea RealStackCoin</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2188,8 +2188,8 @@ Address: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or ronpaulcoind</source>
-        <translation>Trimite comanda la -server sau ronpaulcoind</translation>
+        <source>Send command to -server or realstackcoind</source>
+        <translation>Trimite comanda la -server sau realstackcoind</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2208,12 +2208,12 @@ Address: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: ronpaulcoin.conf)</source>
-        <translation>Specifica-ți configurația fisierului (in mod normal: ronpaulcoin.conf)</translation>
+        <source>Specify configuration file (default: realstackcoin.conf)</source>
+        <translation>Specifica-ți configurația fisierului (in mod normal: realstackcoin.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: ronpaulcoind.pid)</source>
+        <source>Specify pid file (default: realstackcoind.pid)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2292,13 +2292,13 @@ Address: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=ronpaulcoinrpc
+rpcuser=realstackcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;RealStackCoin Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2314,7 +2314,7 @@ for example: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Alert&quot; admin@
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. RonPaulCoin is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. RealStackCoin is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2359,7 +2359,7 @@ for example: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Alert&quot; admin@
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong RonPaulCoin will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong RealStackCoin will not work properly.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2609,8 +2609,8 @@ for example: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Alert&quot; admin@
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the RonPaulCoin Wiki for SSL setup instructions)</source>
-        <translation>Optiuni SSl (vezi RonPaulCoin wiki pentru intructiunile de instalare)</translation>
+        <source>SSL options: (see the RealStackCoin Wiki for SSL setup instructions)</source>
+        <translation>Optiuni SSl (vezi RealStackCoin wiki pentru intructiunile de instalare)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2801,13 +2801,13 @@ for example: alertnotify=echo %%s | mail -s &quot;RonPaulCoin Alert&quot; admin@
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of RonPaulCoin</source>
-        <translation>Eroare incarcare wallet.dat: Portofelul are nevoie de o versiune RonPaulCoin mai noua</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of RealStackCoin</source>
+        <translation>Eroare incarcare wallet.dat: Portofelul are nevoie de o versiune RealStackCoin mai noua</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart RonPaulCoin to complete</source>
-        <translation>Portofelul trebuie rescris: restarteaza aplicatia ronpaulcoin pentru a face asta.</translation>
+        <source>Wallet needed to be rewritten: restart RealStackCoin to complete</source>
+        <translation>Portofelul trebuie rescris: restarteaza aplicatia realstackcoin pentru a face asta.</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2868,8 +2868,8 @@ details suggestions history
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. RonPaulCoin is probably already running.</source>
-        <translation>Imposibilitatea de a lega la% s pe acest computer. RonPaulCoin este, probabil, deja în execuție.</translation>
+        <source>Unable to bind to %s on this computer. RealStackCoin is probably already running.</source>
+        <translation>Imposibilitatea de a lega la% s pe acest computer. RealStackCoin este, probabil, deja în execuție.</translation>
     </message>
     <message>
         <location line="+64"/>
