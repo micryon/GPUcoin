@@ -74,7 +74,8 @@ namespace Checkpoints
 
         MapCheckpoints::const_iterator i = checkpoints.find(nHeight);
         if (i == checkpoints.end()) return true;
-        return hash == i->second;
+        //return hash == i->second;
+        return true; //disable checkpoints for now
     }
 
     // Guess how far we are in the verification process at the given block index
@@ -117,7 +118,8 @@ namespace Checkpoints
 
         const MapCheckpoints& checkpoints = *Checkpoints().mapCheckpoints;
 
-        return checkpoints.rbegin()->first;
+        //return checkpoints.rbegin()->first;
+        return true; //return true for now
     }
 
     CBlockIndex* GetLastCheckpoint(const std::map<uint256, CBlockIndex*>& mapBlockIndex)

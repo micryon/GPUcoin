@@ -1064,11 +1064,11 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 1000000 * COIN;
+    int64 nSubsidy = 3200000 * COIN;
 
     // Premine it to reimburse people who lost out.
     if (nHeight == 0)
-    	nSubsidy ==  6720000000*COIN;
+    	nSubsidy =  6720000000*COIN;
     else
     // subsidy is halved every month
     	nSubsidy >>= (nHeight / 21000); // RonPaulCoin: 1051k blocks in ~4 years
@@ -2840,7 +2840,7 @@ bool InitBlockIndex() {
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 1 * COIN;
+        txNew.vout[0].nValue = 3200000 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
