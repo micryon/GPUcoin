@@ -14,7 +14,7 @@ Copyright (c) 2014 RealStackCoin Developers
 Wof-work algorithm:
  - Scrypt
  - Maxcoins: 134.4 billion
- - Premine: <to figure out>
+ - Premine: 6 720 000 000 (5.3%)
  - 2.0 minute block targets
  - subsidy halves in N (~21k blocks) blocks (~every month )
  - 1 000 000 coin per block
