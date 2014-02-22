@@ -2834,7 +2834,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = !fTestNet ? "Ron Paul News 23/Dec/2013 Obamacare Could Have Meltdown" : "RPC Testnet3";
+        const char* pszTimestamp = !fTestNet ? "2/22/2014 Some Jerk ripped people off on altcoins forum" : "Real Stackcoin Testnet3";
 
         CTransaction txNew;
         txNew.vin.resize(1);
@@ -2847,9 +2847,9 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1387835382;
+        block.nTime    = 1393104162;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 4999242;
+        block.nNonce   = 4449242;
 
         if (fTestNet)
         {
