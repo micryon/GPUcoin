@@ -2908,11 +2908,11 @@ bool InitBlockIndex() {
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
         if (fTestNet)
         {
-            assert(block.hashMerkleRoot == uint256("0x9673d970cb7d6db03ad7be867d53291eaf1599a688a5f75a34f31bd7420d74ae"));
+            assert(block.hashMerkleRoot == uint256("0x342a206b999f918d358c53192edbc6246b9acaabf1c6cba355779c0271703572"));
         }
         else
         {
-            assert(block.hashMerkleRoot == uint256("0x242fa5d7cc0bb344d707c4282ed8cbafa049153c1e2052258115e58a1a00dca1"));
+            assert(block.hashMerkleRoot == uint256("0x342a206b999f918d358c53192edbc6246b9acaabf1c6cba355779c0271703572"));
         }
 
         block.print();
