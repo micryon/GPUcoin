@@ -11,7 +11,7 @@ Copyright (c) 2014 RealStackCoin Developers
 
 -- community built from the ground up --
 
-Wof-work algorithm:
+Proof-of-work algorithm:
  - Scrypt
  - Maxcoins: 134.4 billion
  - Premine: 6 720 000 000 (5.3%)
@@ -20,7 +20,7 @@ Wof-work algorithm:
  - 1 000 000 coin per block
  - KGW implementation
 
-default Port 7382  / 1 for test net
+default Port 7382  / +10k for test net
 default RPC port 7381 
 
 
