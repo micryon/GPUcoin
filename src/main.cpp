@@ -1066,11 +1066,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 3200000 * COIN;
 
-    if (nHeight == 1)
-    {
-    	nSubsidy = 6720000000 * COIN;  // premine for people who lost BTCs
-    }
-    else if (nHeight >1 && nHeight < 1440)  //make it fair for miners: first 100 blocks are almost worthless..
+
+    if (nHeight >1 && nHeight < 1440)  //make it fair for miners: first 100 blocks are almost worthless..
     {
     	nSubsidy = 1 * COIN;
     }
