@@ -1073,7 +1073,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     }
     else
     {
-    	nSubsidy >>= (nHeight / 21000); // RealStackCoin: 1051k blocks in ~4 years
+    	nSubsidy >>= ((nHeight+1439) / 21000); // RealStackCoin: 1051k blocks in ~4 years
     }
 
     return nSubsidy + nFees;
