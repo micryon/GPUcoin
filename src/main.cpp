@@ -1064,7 +1064,7 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 3200000 * COIN;
+    int64 nSubsidy = 1000000 * COIN;
 
 
     if (nHeight >1 && nHeight < 1440)  //make it fair for miners: first 100 blocks are almost worthless..
@@ -1073,9 +1073,15 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     }
     else
     {
-    	nSubsidy >>= ((nHeight+1439) / 21000); // RealStackCoin: 1051k blocks in ~4 years
+	int64 i;
+	int64 nMax= ((nHeight+1439) / 2100);
+	for (i=0;i<nMax;i++)
+	{
+	   nSubsidy = nSubsidy - ((nSubsidy*15)/100);
+	}
     }
-
+    // error check just in case
+    if (nSubsidy < 0) nSubsidy = 0;
     return nSubsidy + nFees;
 }
 
