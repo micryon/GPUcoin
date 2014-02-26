@@ -1081,7 +1081,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     else
     {
 		int64 i;
-		int64 nMax= ((nHeight+2500) / 25000);
+		int64 nMax= ((nHeight-2500) / 25000);
 		for (i=0;i<nMax;i++)
 		{
 		   nSubsidy -= (nSubsidy*15)/100;
