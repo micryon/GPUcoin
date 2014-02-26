@@ -47,7 +47,7 @@ QString BitcoinUnits::description(int unit)
     {
     case BTC: return QString("RealStackCoins");
     case mBTC: return QString("Milli-RealStackCoins (1 / 1,000)");
-    case uBTC: return QString("Micro-RealStackCoins (1 / 1,000,000)");
+    case uBTC: return QString("Micro-RealStackCoins (1 / 10,000)");
     default: return QString("???");
     }
 }
@@ -56,10 +56,10 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case BTC:  return 100000000;
-    case mBTC: return 100000;
-    case uBTC: return 100;
-    default:   return 100000000;
+    case BTC:  return 100000;
+    case mBTC: return 100;
+    case uBTC: return 10;
+    default:   return 100000;
     }
 }
 
@@ -69,7 +69,7 @@ int BitcoinUnits::amountDigits(int unit)
     {
     case BTC: return 8; // 21,000,000 (# digits, without commas)
     case mBTC: return 11; // 21,000,000,000
-    case uBTC: return 14; // 21,000,000,000,000
+    case uBTC: return 12; // 21,000,000,000,000
     default: return 0;
     }
 }
@@ -78,9 +78,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case BTC: return 8;
-    case mBTC: return 5;
-    case uBTC: return 2;
+    case BTC: return 5;
+    case mBTC: return 2;
+    case uBTC: return 1;
     default: return 0;
     }
 }
