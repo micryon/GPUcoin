@@ -1070,26 +1070,30 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     {
        nSubsidy = 6720000000 * COIN;  // premine for people who lost BTCs
     }
-    else if (nHeight >1 && nHeight < 1440)  //make it fair for miners: first 100 blocks are almost worthless..
+    else if (nHeight >1 && nHeight <= 200)  //launch at 200 with checkpoints
+    {
+    	nSubsidy = 0 * COIN;
+    }
+    else if (nHeight >200 && nHeight <2500)  //start mining at 2500
     {
     	nSubsidy = 1 * COIN;
     }
     else
     {
 	int64 i;
-	int64 nMax= ((nHeight+1439) / 2100);
+	int64 nMax= ((nHeight+2500) / 2100);
 	for (i=0;i<nMax;i++)
 	{
 	   nSubsidy = nSubsidy - ((nSubsidy*15)/100);
 	}
     }
-    // error check just in case
+    // error check just in case I did something stupid
     if (nSubsidy < 0) nSubsidy = 0;
     return nSubsidy + nFees;
 }
 
 
-int64 nTargetTimespan = 1.0 * 24 * 60 * 60; // RealStackCoin: 1.0 day
+int64 nTargetTimespan = 2.0 * 2 * 60; // Let's do every 2 blocks
 static const int64 nTargetSpacing = 2.0 * 60; // RealStackCoin: 2.0 minutes
 
 //
@@ -1118,6 +1122,65 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     return bnResult.GetCompact();
 }
 
+unsigned int static GravityWell(const CBlockIndex* pindexLast, const CBlockHeader *pblock, uint64 TargetBlocksSpacingSeconds, uint64 PastBlocksMin, uint64 PastBlocksMax) {
+
+	const CBlockIndex  *BlockLastSolved				= pindexLast;
+	const CBlockIndex  *BlockReading				= pindexLast;
+	uint64				PastBlocksMass				= 0;
+	int64				PastRateActualSeconds		= 0;
+	int64				PastRateTargetSeconds		= 0;
+	double				PastRateAdjustmentRatio		= double(1);
+	CBigNum				PastDifficultyAverage;
+	CBigNum				PastDifficultyAveragePrev;
+	double				EventHorizonDeviation;
+	double				EventHorizonDeviationFast;
+	double				EventHorizonDeviationSlow;
+
+    if (BlockLastSolved == NULL || BlockLastSolved->nHeight == 0 || (uint64)BlockLastSolved->nHeight < PastBlocksMin) { return bnProofOfWorkLimit.GetCompact(); }
+
+	for (unsigned int i = 1; BlockReading && BlockReading->nHeight > 0; i++) {
+		if (PastBlocksMax > 0 && i > PastBlocksMax) { break; }
+		PastBlocksMass++;
+
+		if (i == 1)	{ PastDifficultyAverage.SetCompact(BlockReading->nBits); }
+		else		{ PastDifficultyAverage = ((CBigNum().SetCompact(BlockReading->nBits) - PastDifficultyAveragePrev) / i) + PastDifficultyAveragePrev; }
+		PastDifficultyAveragePrev = PastDifficultyAverage;
+
+		PastRateActualSeconds			= BlockLastSolved->GetBlockTime() - BlockReading->GetBlockTime();
+		PastRateTargetSeconds			= TargetBlocksSpacingSeconds * PastBlocksMass;
+		PastRateAdjustmentRatio			= double(1);
+		if (PastRateActualSeconds < 0) { PastRateActualSeconds = 0; }
+		if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
+		PastRateAdjustmentRatio			= double(PastRateTargetSeconds) / double(PastRateActualSeconds);
+		}
+		EventHorizonDeviation			= 1 + (0.7084 * pow((double(PastBlocksMass)/double(144)), -1.228));
+		EventHorizonDeviationFast		= EventHorizonDeviation;
+		EventHorizonDeviationSlow		= 1 / EventHorizonDeviation;
+
+		if (PastBlocksMass >= PastBlocksMin) {
+			if ((PastRateAdjustmentRatio <= EventHorizonDeviationSlow) || (PastRateAdjustmentRatio >= EventHorizonDeviationFast)) { assert(BlockReading); break; }
+		}
+		if (BlockReading->pprev == NULL) { assert(BlockReading); break; }
+		BlockReading = BlockReading->pprev;
+	}
+
+	CBigNum bnNew(PastDifficultyAverage);
+	if (PastRateActualSeconds != 0 && PastRateTargetSeconds != 0) {
+		bnNew *= PastRateActualSeconds;
+		bnNew /= PastRateTargetSeconds;
+	}
+    if (bnNew > bnProofOfWorkLimit) { bnNew = bnProofOfWorkLimit; }
+
+    /// debug print
+    printf("Difficulty Retarget - Gravity Well\n");
+    printf("PastRateAdjustmentRatio = %g\n", PastRateAdjustmentRatio);
+    printf("Before: %08x  %s\n", BlockLastSolved->nBits, CBigNum().SetCompact(BlockLastSolved->nBits).getuint256().ToString().c_str());
+    printf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.getuint256().ToString().c_str());
+
+	return bnNew.GetCompact();
+}
+
+
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
@@ -1130,25 +1193,31 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     // The next block
     int nHeight = pindexLast->nHeight + 1;
 
-    // Difficulty change Fork
-    int nDiffFork = 13650;
-    if((nHeight >= nDiffFork) || (fTestNet && (nHeight >= 2016)))
-      nTargetTimespan = (1 * 24 * 60 * 60) / 15; // 1/15 days = 5,760
+    if (nHeight<2)
+    	return nProofOfWorkLimit;
 
-    // 720 blocks initial, 48 after diff fork
     int nInterval = nTargetTimespan / nTargetSpacing;
 
-    bool fHardFork = (nHeight == nDiffFork);
-    if(fTestNet)
-       fHardFork = (nHeight == 2016 );
+    //Might as well start KGW.. right away :)
+	if (nHeight >= 2)
+	{
+		static const int64	BlocksTargetSpacing			= 2 * 60; // 2 minutes
+		unsigned int		TimeDaySeconds				= 60 * 60 * 24;
+		int64				PastSecondsMin				= TimeDaySeconds * 0.5;
+		int64				PastSecondsMax				= TimeDaySeconds * 14;
+		uint64				PastBlocksMin				= PastSecondsMin / BlocksTargetSpacing;
+		uint64				PastBlocksMax				= PastSecondsMax / BlocksTargetSpacing;
 
-    // Difficulty rules regular blocks
-    if((nHeight % nInterval != 0) && !(fHardFork)) {
+		return GravityWell(pindexLast, pblock, BlocksTargetSpacing, PastBlocksMin, PastBlocksMax);
+	}
 
+    // Only change once per interval
+    if ((pindexLast->nHeight+1) % nInterval != 0)
+    {
         // Special difficulty rule for testnet:
         if (fTestNet)
         {
-            // If the new block's timestamp is more than 2* 2 minutes
+            // If the new block's timestamp is more than 2* 10 minutes
             // then allow mining of a min-difficulty block.
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
                 return nProofOfWorkLimit;
@@ -1165,47 +1234,29 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         return pindexLast->nBits;
     }
 
-    // The 1st retarget after genesis
-    if(nInterval >= nHeight) nInterval = nHeight - 1;
+    // Copied this from Auroracoin: This fixes an issue where a 51% attack can change difficulty at will.
+    // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
+    int blockstogoback = nInterval-1;
+    if ((pindexLast->nHeight+1) != nInterval)
+        blockstogoback = nInterval;
 
-    // Go back by nInterval
+    // Go back by what we want to be 14 days worth of blocks
     const CBlockIndex* pindexFirst = pindexLast;
-    for(int i = 0; pindexFirst && i < nInterval; i++)
-      pindexFirst = pindexFirst->pprev;
+    for (int i = 0; pindexFirst && i < blockstogoback; i++)
+        pindexFirst = pindexFirst->pprev;
     assert(pindexFirst);
 
     // Limit adjustment step
     int64 nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
-    printf("  nActualTimespan = %"PRI64d"  before bounds\n", nActualTimespan);
+    printf(" nActualTimespan = %"PRI64d" before bounds\n", nActualTimespan);
 
-    // The initial settings
-    int nActualTimespanMax = nTargetTimespan*4; // 86,400 * 4 = 345600
-    int nActualTimespanMin = nTargetTimespan/16; // 86,400 / 16 = 5400
+         int64 nActualTimespanMax = ((nTargetTimespan*75)/50);
+         int64 nActualTimespanMin = ((nTargetTimespan*50)/75);
 
-    // The first inherited fork
-    if(nHeight > 5000) {
-       nActualTimespanMax = nTargetTimespan*4; // 86,400 * 4 = 345600
-       nActualTimespanMin = nTargetTimespan/8; // 86,400 / 8 = 10800
-    }
-
-    // The second inherited fork
-    if(nHeight > 10000) {
-       nActualTimespanMax = nTargetTimespan*4; // 86,400 * 4 = 345600
-       nActualTimespanMin = nTargetTimespan/4; // 86,400 / 4 = 21600
-    }
-
-    // Our fork 11% change
-    if ((nHeight >= nDiffFork) || (fTestNet && (nHeight >=2016 ))) {
-        nActualTimespanMax = nTargetTimespan*10/9;  //5760 * 10 / 9 = 6400
-        nActualTimespanMin = nTargetTimespan*9/10;  //5760 * 9 / 10 = 5184
-    }
-
-    if(nActualTimespan < nActualTimespanMin) nActualTimespan = nActualTimespanMin;
-    if(nActualTimespan > nActualTimespanMax) nActualTimespan = nActualTimespanMax;
-
-
-    printf("RETARGET: nActualTimespan = %"PRI64d" after bounds\n", nActualTimespan);
-    printf("RETARGET: nTargetTimespan = %"PRI64d", nTargetTimespan/nActualTimespan = %.4f\n", nTargetTimespan, (float) nTargetTimespan/nActualTimespan);
+    if (nActualTimespan < nActualTimespanMin)
+        nActualTimespan = nActualTimespanMin;
+    if (nActualTimespan > nActualTimespanMax)
+        nActualTimespan = nActualTimespanMax;
 
     // Retarget
     CBigNum bnNew;
@@ -1213,10 +1264,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     bnNew *= nActualTimespan;
     bnNew /= nTargetTimespan;
 
-
     if (bnNew > bnProofOfWorkLimit)
         bnNew = bnProofOfWorkLimit;
-
 
     /// debug print
     printf("GetNextWorkRequired RETARGET\n");
@@ -1225,7 +1274,6 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     printf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.getuint256().ToString().c_str());
 
     return bnNew.GetCompact();
-
 }
 
 bool CheckProofOfWork(uint256 hash, unsigned int nBits)
