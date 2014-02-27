@@ -2851,7 +2851,7 @@ bool InitBlockIndex() {
 
         // Kept for future
         // If genesis block hash does not match, then generate new genesis hash.
-              if (true && block.GetHash() != hashGenesisBlock)
+              /*if (true && block.GetHash() != hashGenesisBlock)
               {
                   printf("Searching for genesis block...\n");
                   // This will figure out a valid hash and Nonce if you're
@@ -2889,7 +2889,7 @@ bool InitBlockIndex() {
                           ++block.nTime;
                       }
                   }
-               }
+               }*/
 
         //// debug print
         uint256 hash = block.GetHash();
