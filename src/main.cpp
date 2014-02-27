@@ -1074,14 +1074,14 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     {
     	nSubsidy = 0 * COIN;
     }
-    else if (nHeight >200 && nHeight <2500)  //real start of mining at 2500
+    else if (nHeight >200 && nHeight <3600)  //real start of mining at 3600
     {
     	nSubsidy = 1 * COIN;
     }
     else
     {
 		int64 i;
-		int64 nMax= ((nHeight-2500) / 25000);
+		int64 nMax= ((nHeight-3600) / 25000);
 		for (i=0;i<nMax;i++)
 		{
 		   nSubsidy -= (nSubsidy*15)/100;
