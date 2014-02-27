@@ -5,7 +5,7 @@ http://www.realstackcoin.org (tbd)
 
 Copyright (c) 2009-2013 Bitcoin Developers
 
-Copyright (c) 2013-2014 RonPaulCoin Developers (colinistheman,onaboat,Tranz,Dajackal)
+Copyright (c) 2013-2014 Realstackcoin Developers (colinistheman,onaboat,Tranz,Dajackal)
 
 Copyright (c) 2014 RealStackCoin Developers
 
@@ -45,5 +45,5 @@ Unit tests for the GUI code are in `src/qt/test/`. To compile and run them:
 
     qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
     make -f Makefile.test
-    ./ronpaulcoin-qt_test
+    ./Realstackcoin-qt_test
 

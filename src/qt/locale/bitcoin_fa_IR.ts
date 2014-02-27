@@ -1259,7 +1259,7 @@ Address: %4
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
         <source>Welcome to the RealStackCoin RPC console.</source>
-        <translation>به کنسول آر.پی.سی. RONPAULCOIN خوش آمدید</translation>
+        <translation>به کنسول آر.پی.سی. Realstackcoin خوش آمدید</translation>
     </message>
     <message>
         <location line="+1"/>
