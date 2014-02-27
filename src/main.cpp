@@ -32,7 +32,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x7c4c608556280f9fc850e027112ffdfcc440b67d577f345e31bb87e7c8cb3586");
+uint256 hashGenesisBlock("0xad164d07e7763d6e6fe48c22f7de1960facfb9d761ae9a836992d8cc114df8a2");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // RealStackCoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2825,22 +2825,22 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "2/22/2014 Some Jerk ripped people off on altcoins forum";
+        const char* pszTimestamp = "2/26/2014 Merkel to set out case for Britain staying in the EU";
 
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 6720000000 * COIN;
+        txNew.vout[0].nValue = 1000000 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1393104162;
+        block.nTime    = 1393476259; //final time
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 5794393;
+        block.nNonce   = 7168651;
 
         if (fTestNet)
         {
@@ -2851,7 +2851,7 @@ bool InitBlockIndex() {
 
         // Kept for future
         // If genesis block hash does not match, then generate new genesis hash.
-              /*if (true && block.GetHash() != hashGenesisBlock)
+              if (true && block.GetHash() != hashGenesisBlock)
               {
                   printf("Searching for genesis block...\n");
                   // This will figure out a valid hash and Nonce if you're
@@ -2889,7 +2889,7 @@ bool InitBlockIndex() {
                           ++block.nTime;
                       }
                   }
-               }*/
+               }
 
         //// debug print
         uint256 hash = block.GetHash();
@@ -2902,7 +2902,7 @@ bool InitBlockIndex() {
         }
         else
         {
-            assert(block.hashMerkleRoot == uint256("0x6dd539c67c779cbf72cbf1c38fdc252de6430a9d20c4029d8ec9c5d69de26d78"));
+            assert(block.hashMerkleRoot == uint256("0x9bee03ccf2067c747475eacd6744b321d82375df647f1b293f1a145ad1dd6ea4"));
         }
 
         block.print();
