@@ -1,8 +1,8 @@
-RealStackCoin 0.8.x BETA
+GPUcoin 0.8.x BETA
 ====================
 
 Copyright (c) 2009-2013 Bitcoin Developers
-Copyright (c) 2011-2013 RealStackCoin Developers
+Copyright (c) 2011-2013 GPUcoin Developers
 
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -12,7 +12,7 @@ cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cry
 
 Intro
 ---------------------
-RealStackCoin is a free open source peer-to-peer electronic cash system that is
+GPUcoin is a free open source peer-to-peer electronic cash system that is
 completely decentralized, without the need for a central server or trusted
 parties.  Users hold the crypto keys to their own money and transact directly
 with each other, with the help of a P2P network to check for double-spending.
@@ -20,17 +20,17 @@ with each other, with the help of a P2P network to check for double-spending.
 
 Setup
 ---------------------
-You need the Qt4 run-time libraries to run RealStackCoin-Qt. On Debian or Ubuntu:
+You need the Qt4 run-time libraries to run GPUcoin-Qt. On Debian or Ubuntu:
 	`sudo apt-get install libqtgui4`
 
 Unpack the files into a directory and run:
 
-- bin/32/realstackcoin-qt (GUI, 32-bit)
-- bin/32/realstackcoind (headless, 32-bit)
-- bin/64/realstackcoin-qt (GUI, 64-bit)
-- bin/64/realstackcoind (headless, 64-bit)
+- bin/32/gpucoin-qt (GUI, 32-bit)
+- bin/32/gpucoind (headless, 32-bit)
+- bin/64/gpucoin-qt (GUI, 64-bit)
+- bin/64/gpucoind (headless, 64-bit)
 
-See the documentation at the [RealStackCoin Wiki](http://realstackcoin.info)
+See the documentation at the [GPUcoin Wiki](http://gpucoin.info)
 for help and more information.
 
 

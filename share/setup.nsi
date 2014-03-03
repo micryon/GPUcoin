@@ -1,4 +1,4 @@
-Name RealStackCoin
+Name GPUcoin
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -6,8 +6,8 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 0.8.6.1
-!define COMPANY "RealStackCoin project"
-!define URL http://www.realstackcoin.org/
+!define COMPANY "GPUcoin project"
+!define URL http://www.gpucoin.org/
 
 # MUI Symbol Definitions
 !define MUI_ICON "../share/pixmaps/bitcoin.ico"
@@ -19,8 +19,8 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER RealStackCoin
-!define MUI_FINISHPAGE_RUN $INSTDIR\realstackcoin-qt.exe
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER GPUcoin
+!define MUI_FINISHPAGE_RUN $INSTDIR\gpucoin-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
@@ -45,14 +45,14 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile realstackcoin-0.8.6.1-win32-setup.exe
-InstallDir $PROGRAMFILES\RealStackCoin
+OutFile gpucoin-0.8.6.1-win32-setup.exe
+InstallDir $PROGRAMFILES\GPUcoin
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion 0.8.6.1
-VIAddVersionKey ProductName RealStackCoin
+VIAddVersionKey ProductName GPUcoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -66,18 +66,18 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File ../release/realstackcoin-qt.exe
+    File ../release/gpucoin-qt.exe
     File /oname=COPYING.txt ../COPYING
     File /oname=readme.txt ../doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File ../src/realstackcoind.exe
+    File ../src/gpucoind.exe
     SetOutPath $INSTDIR\src
     File /r /x *.exe /x *.o ../src\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
     # Remove old wxwidgets-based-bitcoin executable and locales:
-    Delete /REBOOTOK $INSTDIR\realstackcoin.exe
+    Delete /REBOOTOK $INSTDIR\gpucoin.exe
     RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
 
@@ -87,8 +87,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\RealStackCoin.lnk" $INSTDIR\realstackcoin-qt.exe
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall RealStackCoin.lnk" $INSTDIR\uninstall.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\GPUcoin.lnk" $INSTDIR\gpucoin-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall GPUcoin.lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "${VERSION}"
@@ -98,10 +98,10 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "realstackcoin" "URL Protocol" ""
-    WriteRegStr HKCR "realstackcoin" "" "URL:RealStackCoin"
-    WriteRegStr HKCR "realstackcoin\DefaultIcon" "" $INSTDIR\realstackcoin-qt.exe
-    WriteRegStr HKCR "realstackcoin\shell\open\command" "" '"$INSTDIR\realstackcoin-qt.exe" "%1"'
+    WriteRegStr HKCR "gpucoin" "URL Protocol" ""
+    WriteRegStr HKCR "gpucoin" "" "URL:GPUcoin"
+    WriteRegStr HKCR "gpucoin\DefaultIcon" "" $INSTDIR\gpucoin-qt.exe
+    WriteRegStr HKCR "gpucoin\shell\open\command" "" '"$INSTDIR\gpucoin-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -119,7 +119,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\realstackcoin-qt.exe
+    Delete /REBOOTOK $INSTDIR\gpucoin-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -129,9 +129,9 @@ SectionEnd
 
 Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall RealStackCoin.lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\RealStackCoin.lnk"
-    Delete /REBOOTOK "$SMSTARTUP\RealStackCoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall GPUcoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\GPUcoin.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\GPUcoin.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -139,7 +139,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "realstackcoin"
+    DeleteRegKey HKCR "gpucoin"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

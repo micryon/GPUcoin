@@ -3,7 +3,7 @@
 <plist version="0.9">
 <dict>
 	<key>CFBundleIconFile</key>
-	<string>realstackcoin.icns</string>
+	<string>gpucoin.icns</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleGetInfoString</key>
@@ -15,19 +15,19 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleExecutable</key>
-	<string>RealStackCoin-Qt</string>
+	<string>GPUcoin-Qt</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.realstackcoin.RealStackCoin-Qt</string>
+	<string>org.gpucoin.GPUcoin-Qt</string>
         <key>CFBundleURLTypes</key>
         <array>
           <dict>
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
             <key>CFBundleURLName</key>
-            <string>org.realstackcoin.RealStackCoinPayment</string>
+            <string>org.gpucoin.GPUcoinPayment</string>
             <key>CFBundleURLSchemes</key>
             <array>
-              <string>realstackcoin</string>
+              <string>gpucoin</string>
             </array>
           </dict>
         </array>

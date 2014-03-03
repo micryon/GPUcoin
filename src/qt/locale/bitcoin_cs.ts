@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About RealStackCoin</source>
-        <translation>O RealStackCoinu</translation>
+        <source>About GPUcoin</source>
+        <translation>O GPUcoinu</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;RealStackCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;RealStackCoin&lt;/b&gt; verze</translation>
+        <source>&lt;b&gt;GPUcoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;GPUcoin&lt;/b&gt; verze</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -34,8 +34,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+0"/>
-        <source>The RealStackCoin developers</source>
-        <translation>Vývojáři RealStackCoinu</translation>
+        <source>The GPUcoin developers</source>
+        <translation>Vývojáři GPUcoinu</translation>
     </message>
 </context>
 <context>
@@ -67,8 +67,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your RealStackCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Tohle jsou tvé RealStackCoinové adresy pro příjem plateb. Můžeš dát pokaždé každému plátci novou adresu, abys věděl, kdo ti kdy kolik platil.</translation>
+        <source>These are your GPUcoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Tohle jsou tvé GPUcoinové adresy pro příjem plateb. Můžeš dát pokaždé každému plátci novou adresu, abys věděl, kdo ti kdy kolik platil.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -82,8 +82,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a RealStackCoin address</source>
-        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem RealStackCoinové adresy</translation>
+        <source>Sign a message to prove you own a GPUcoin address</source>
+        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem GPUcoinové adresy</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -107,8 +107,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified RealStackCoin address</source>
-        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou RealStackCoinovou adresou</translation>
+        <source>Verify a message to ensure it was signed with a specified GPUcoin address</source>
+        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou GPUcoinovou adresou</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -122,8 +122,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your RealStackCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Tohle jsou tvé RealStackCoinové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
+        <source>These are your GPUcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Tohle jsou tvé GPUcoinové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -248,8 +248,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR REALSTACKCOINS&lt;/b&gt;!</source>
-        <translation>Varování: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY RealstackcoinY&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR GPUCOINS&lt;/b&gt;!</source>
+        <translation>Varování: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY GPUcoinY&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -275,8 +275,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="-56"/>
-        <source>RealStackCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your realstackcoins from being stolen by malware infecting your computer.</source>
-        <translation>RealStackCoin se teď ukončí, aby dokončil zašifrování. Pamatuj však, že pouhé zašifrování peněženky úplně nezabraňuje krádeži tvých realstackcoinů malwarem, kterým se může počítač nakazit.</translation>
+        <source>GPUcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your gpucoins from being stolen by malware infecting your computer.</source>
+        <translation>GPUcoin se teď ukončí, aby dokončil zašifrování. Pamatuj však, že pouhé zašifrování peněženky úplně nezabraňuje krádeži tvých gpucoinů malwarem, kterým se může počítač nakazit.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -374,8 +374,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about RealStackCoin</source>
-        <translation>Zobraz informace o RealStackCoinu</translation>
+        <source>Show information about GPUcoin</source>
+        <translation>Zobraz informace o GPUcoinu</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -419,13 +419,13 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a RealStackCoin address</source>
-        <translation>Pošli mince na RealStackCoinovou adresu</translation>
+        <source>Send coins to a GPUcoin address</source>
+        <translation>Pošli mince na GPUcoinovou adresu</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for RealStackCoin</source>
-        <translation>Uprav nastavení RealStackCoinu</translation>
+        <source>Modify configuration options for GPUcoin</source>
+        <translation>Uprav nastavení GPUcoinu</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -455,8 +455,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>RealStackCoin</source>
-        <translation>RealStackCoin</translation>
+        <source>GPUcoin</source>
+        <translation>GPUcoin</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -480,8 +480,8 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About RealStackCoin</source>
-        <translation>O &amp;RealStackCoinu</translation>
+        <source>&amp;About GPUcoin</source>
+        <translation>O &amp;GPUcoinu</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -500,13 +500,13 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your RealStackCoin addresses to prove you own them</source>
-        <translation>Podepiš zprávy svými RealStackCoinovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
+        <source>Sign messages with your GPUcoin addresses to prove you own them</source>
+        <translation>Podepiš zprávy svými GPUcoinovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified RealStackCoin addresses</source>
-        <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými RealStackCoinovými adresami</translation>
+        <source>Verify messages to ensure they were signed with specified GPUcoin addresses</source>
+        <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými GPUcoinovými adresami</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -536,13 +536,13 @@ Tento produkt zahrnuje programy vyvinuté OpenSSL Projektem pro použití v Open
     </message>
     <message>
         <location line="+47"/>
-        <source>RealStackCoin client</source>
-        <translation>RealStackCoin klient</translation>
+        <source>GPUcoin client</source>
+        <translation>GPUcoin klient</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to RealStackCoin network</source>
-        <translation><numerusform>%n aktivní spojení do RealStackCoinové sítě</numerusform><numerusform>%n aktivní spojení do RealStackCoinové sítě</numerusform><numerusform>%n aktivních spojení do RealStackCoinové sítě</numerusform></translation>
+        <source>%n active connection(s) to GPUcoin network</source>
+        <translation><numerusform>%n aktivní spojení do GPUcoinové sítě</numerusform><numerusform>%n aktivní spojení do GPUcoinové sítě</numerusform><numerusform>%n aktivních spojení do GPUcoinové sítě</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -656,8 +656,8 @@ Adresa: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid RealStackCoin address or malformed URI parameters.</source>
-        <translation>Nepodařilo se analyzovat URI! Důvodem může být neplatná RealStackCoinová adresa nebo poškozené parametry URI.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid GPUcoin address or malformed URI parameters.</source>
+        <translation>Nepodařilo se analyzovat URI! Důvodem může být neplatná GPUcoinová adresa nebo poškozené parametry URI.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -671,8 +671,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. RealStackCoin can no longer continue safely and will quit.</source>
-        <translation>Stala se fatální chyba. RealStackCoin nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
+        <source>A fatal error occurred. GPUcoin can no longer continue safely and will quit.</source>
+        <translation>Stala se fatální chyba. GPUcoin nemůže bezpečně pokračovat v činnosti, a proto skončí.</translation>
     </message>
 </context>
 <context>
@@ -737,8 +737,8 @@ Adresa: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid RealStackCoin address.</source>
-        <translation>Zadaná adresa &quot;%1&quot; není platná RealStackCoinová adresa.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid GPUcoin address.</source>
+        <translation>Zadaná adresa &quot;%1&quot; není platná GPUcoinová adresa.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -756,8 +756,8 @@ Adresa: %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>RealStackCoin-Qt</source>
-        <translation>RealStackCoin-Qt</translation>
+        <source>GPUcoin-Qt</source>
+        <translation>GPUcoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -819,13 +819,13 @@ Adresa: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start RealStackCoin after logging in to the system.</source>
-        <translation>Automaticky spustí RealStackCoin po přihlášení do systému.</translation>
+        <source>Automatically start GPUcoin after logging in to the system.</source>
+        <translation>Automaticky spustí GPUcoin po přihlášení do systému.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start RealStackCoin on system login</source>
-        <translation>S&amp;pustit RealStackCoin po přihlášení do systému</translation>
+        <source>&amp;Start GPUcoin on system login</source>
+        <translation>S&amp;pustit GPUcoin po přihlášení do systému</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -844,7 +844,7 @@ Adresa: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the RealStackCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the GPUcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Automaticky otevře potřebný port na routeru. Tohle funguje jen za předpokladu, že tvůj router podporuje UPnP a že je UPnP povolené.</translation>
     </message>
     <message>
@@ -854,8 +854,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the RealStackCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Připojí se do RealStackCoinové sítě přes SOCKS proxy (např. když se připojuje přes Tor).</translation>
+        <source>Connect to the GPUcoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Připojí se do GPUcoinové sítě přes SOCKS proxy (např. když se připojuje přes Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -929,8 +929,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting RealStackCoin.</source>
-        <translation>Tady lze nastavit jazyk uživatelského rozhraní. Nastavení se projeví až po restartování RealStackCoinu.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting GPUcoin.</source>
+        <translation>Tady lze nastavit jazyk uživatelského rozhraní. Nastavení se projeví až po restartování GPUcoinu.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -944,8 +944,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show RealStackCoin addresses in the transaction list or not.</source>
-        <translation>Zda ukazovat realstackcoinové adresy ve výpisu transakcí nebo ne.</translation>
+        <source>Whether to show GPUcoin addresses in the transaction list or not.</source>
+        <translation>Zda ukazovat gpucoinové adresy ve výpisu transakcí nebo ne.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -996,8 +996,8 @@ Adresa: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting RealStackCoin.</source>
-        <translation>Nastavení se projeví až po restartování RealStackCoinu.</translation>
+        <source>This setting will take effect after restarting GPUcoin.</source>
+        <translation>Nastavení se projeví až po restartování GPUcoinu.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1015,8 +1015,8 @@ Adresa: %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the RealStackCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s RealStackCoinovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the GPUcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s GPUcoinovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1069,8 +1069,8 @@ Adresa: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start realstackcoin: click-to-pay handler</source>
-        <translation>Nemůžu spustit realstackcoin: obsluha click-to-pay</translation>
+        <source>Cannot start gpucoin: click-to-pay handler</source>
+        <translation>Nemůžu spustit gpucoin: obsluha click-to-pay</translation>
     </message>
 </context>
 <context>
@@ -1219,8 +1219,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the RealStackCoin-Qt help message to get a list with possible RealStackCoin command-line options.</source>
-        <translation>Seznam parametrů RealStackCoinu pro příkazovou řádku získáš v nápovědě RealStackCoinu Qt.</translation>
+        <source>Show the GPUcoin-Qt help message to get a list with possible GPUcoin command-line options.</source>
+        <translation>Seznam parametrů GPUcoinu pro příkazovou řádku získáš v nápovědě GPUcoinu Qt.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1239,13 +1239,13 @@ Adresa: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>RealStackCoin - Debug window</source>
-        <translation>RealStackCoin - ladicí okno</translation>
+        <source>GPUcoin - Debug window</source>
+        <translation>GPUcoin - ladicí okno</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>RealStackCoin Core</source>
-        <translation>Jádro RealStackCoinu</translation>
+        <source>GPUcoin Core</source>
+        <translation>Jádro GPUcoinu</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1254,8 +1254,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the RealStackCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otevři soubor s ladicími záznamy RealStackCoinu z aktuálního datového adresáře. U velkých logů to může pár vteřin zabrat.</translation>
+        <source>Open the GPUcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otevři soubor s ladicími záznamy GPUcoinu z aktuálního datového adresáře. U velkých logů to může pár vteřin zabrat.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1264,8 +1264,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the RealStackCoin RPC console.</source>
-        <translation>Vítej v RealStackCoinové RPC konzoli.</translation>
+        <source>Welcome to the GPUcoin RPC console.</source>
+        <translation>Vítej v GPUcoinové RPC konzoli.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1448,8 +1448,8 @@ Adresa: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a RealStackCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Zadej RealStackCoinovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a GPUcoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Zadej GPUcoinovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1513,8 +1513,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this RealStackCoin address</source>
-        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této RealStackCoinové adresy</translation>
+        <source>Sign the message to prove you own this GPUcoin address</source>
+        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této GPUcoinové adresy</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1549,8 +1549,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified RealStackCoin address</source>
-        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou RealStackCoinovou adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified GPUcoin address</source>
+        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou GPUcoinovou adresou</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1565,8 +1565,8 @@ Adresa: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a RealStackCoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Zadej RealStackCoinovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a GPUcoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Zadej GPUcoinovou adresu (např. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1575,8 +1575,8 @@ Adresa: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter RealStackCoin signature</source>
-        <translation>Vlož RealStackCoinový podpis</translation>
+        <source>Enter GPUcoin signature</source>
+        <translation>Vlož GPUcoinový podpis</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1649,8 +1649,8 @@ Adresa: %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The RealStackCoin developers</source>
-        <translation>Vývojáři RealStackCoinu</translation>
+        <source>The GPUcoin developers</source>
+        <translation>Vývojáři GPUcoinu</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2187,8 +2187,8 @@ Adresa: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>RealStackCoin version</source>
-        <translation>Verze RealStackCoinu</translation>
+        <source>GPUcoin version</source>
+        <translation>Verze GPUcoinu</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2197,8 +2197,8 @@ Adresa: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or realstackcoind</source>
-        <translation>Poslat příkaz pro -server nebo realstackcoind</translation>
+        <source>Send command to -server or gpucoind</source>
+        <translation>Poslat příkaz pro -server nebo gpucoind</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2217,13 +2217,13 @@ Adresa: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: realstackcoin.conf)</source>
-        <translation>Konfigurační soubor (výchozí: realstackcoin.conf)</translation>
+        <source>Specify configuration file (default: gpucoin.conf)</source>
+        <translation>Konfigurační soubor (výchozí: gpucoin.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: realstackcoind.pid)</source>
-        <translation>PID soubor (výchozí: realstackcoind.pid)</translation>
+        <source>Specify pid file (default: gpucoind.pid)</source>
+        <translation>PID soubor (výchozí: gpucoind.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2300,24 +2300,24 @@ Adresa: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=realstackcoinrpc
+rpcuser=gpucoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;RealStackCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;GPUcoin Alert&quot; admin@foo.com
 </source>
         <translation>%s, musíš nastavit rpcpassword v konfiguračním souboru:
 %s
 Je vhodné použít následující náhodné heslo:
-rpcuser=realstackcoinrpc
+rpcuser=gpucoinrpc
 rpcpassword=%s
 (není potřeba si ho pamatovat)
 rpcuser a rpcpassword NESMÍ být stejné.
 Pokud konfigurační soubor ještě neexistuje, vytvoř ho tak, aby ho mohl číst pouze vlastník.
 Je také doporučeno si nastavit alertnotify, abys byl upozorněn na případné problémy;
-například: alertnotify=echo %%s | mail -s &quot;RealStackCoin Alert&quot; admin@foo.com
+například: alertnotify=echo %%s | mail -s &quot;GPUcoin Alert&quot; admin@foo.com
 </translation>
     </message>
     <message>
@@ -2332,8 +2332,8 @@ například: alertnotify=echo %%s | mail -s &quot;RealStackCoin Alert&quot; admi
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. RealStackCoin is probably already running.</source>
-        <translation>Nedaří se mi získat zámek na datový adresář %s. RealStackCoin pravděpodobně už jednou běží.</translation>
+        <source>Cannot obtain a lock on data directory %s. GPUcoin is probably already running.</source>
+        <translation>Nedaří se mi získat zámek na datový adresář %s. GPUcoin pravděpodobně už jednou běží.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2377,8 +2377,8 @@ například: alertnotify=echo %%s | mail -s &quot;RealStackCoin Alert&quot; admi
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong RealStackCoin will not work properly.</source>
-        <translation>Upozornění: Zkontroluj, že máš v počítači správně nastavený datum a čas! Pokud jsou nastaveny špatně, RealStackCoin nebude fungovat správně.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong GPUcoin will not work properly.</source>
+        <translation>Upozornění: Zkontroluj, že máš v počítači správně nastavený datum a čas! Pokud jsou nastaveny špatně, GPUcoin nebude fungovat správně.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2627,8 +2627,8 @@ například: alertnotify=echo %%s | mail -s &quot;RealStackCoin Alert&quot; admi
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the RealStackCoin Wiki for SSL setup instructions)</source>
-        <translation>Možnosti SSL: (viz instrukce nastavení SSL v RealStackCoin Wiki)</translation>
+        <source>SSL options: (see the GPUcoin Wiki for SSL setup instructions)</source>
+        <translation>Možnosti SSL: (viz instrukce nastavení SSL v GPUcoin Wiki)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2817,13 +2817,13 @@ například: alertnotify=echo %%s | mail -s &quot;RealStackCoin Alert&quot; admi
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of RealStackCoin</source>
-        <translation>Chyba při načítání wallet.dat: peněženka vyžaduje novější verzi RealStackCoinu</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of GPUcoin</source>
+        <translation>Chyba při načítání wallet.dat: peněženka vyžaduje novější verzi GPUcoinu</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart RealStackCoin to complete</source>
-        <translation>Soubor s peněženkou potřeboval přepsat: restartuj RealStackCoin, aby se operace dokončila</translation>
+        <source>Wallet needed to be rewritten: restart GPUcoin to complete</source>
+        <translation>Soubor s peněženkou potřeboval přepsat: restartuj GPUcoin, aby se operace dokončila</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2882,8 +2882,8 @@ například: alertnotify=echo %%s | mail -s &quot;RealStackCoin Alert&quot; admi
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. RealStackCoin is probably already running.</source>
-        <translation>Nedaří se mi připojit na %s na tomhle počítači. RealStackCoin už pravděpodobně jednou běží.</translation>
+        <source>Unable to bind to %s on this computer. GPUcoin is probably already running.</source>
+        <translation>Nedaří se mi připojit na %s na tomhle počítači. GPUcoin už pravděpodobně jednou běží.</translation>
     </message>
     <message>
         <location line="+64"/>

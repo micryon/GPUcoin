@@ -45,9 +45,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("RealStackCoins");
-    case mBTC: return QString("Milli-RealStackCoins (1 / 1,000)");
-    case uBTC: return QString("Micro-RealStackCoins (1 / 10,000)");
+    case BTC: return QString("GPUcoins");
+    case mBTC: return QString("Milli-GPUcoins (1 / 1,000)");
+    case uBTC: return QString("Micro-GPUcoins (1 / 10,000)");
     default: return QString("???");
     }
 }
