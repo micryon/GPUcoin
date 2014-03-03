@@ -39,11 +39,9 @@ Development plan
   - (done) Revert fix micro, milli units (this was changed before to avoid integer overflows for 100B+coins)
   - (done) Update subsidy schedule
   
-    - change confirmations needed to account for 60second blocktimes
+    - (done) change confirmations needed to account for 60second blocktimes changed to 12
+  - nfactor schedule
   - Add in graphics
-    
-  - Add in nfactor schedule
-
 
 
   - Build windows_alpha client
