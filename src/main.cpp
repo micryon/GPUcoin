@@ -1093,8 +1093,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 }
 
 
-int64 nTargetTimespan = 2.0 * 2 * 60; // Let's do every 2 blocks
-static const int64 nTargetSpacing = 2.0 * 60; // GPUcoin: 2.0 minutes
+int64 nTargetTimespan = 1.0 * 60; // everyblock
+static const int64 nTargetSpacing = 1.0 * 60; // GPUcoin: 1.0 minutes
 
 //
 // minimum amount of work that could possibly be required nTime after
@@ -1185,9 +1185,9 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
 // Using KGW
 unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-        static const int64        BlocksTargetSpacing                        = 2.0 * 60; // 2.5 minutes
-        unsigned int                TimeDaySeconds                                = 60 * 60 * 24;
-        int64                                PastSecondsMin                                = TimeDaySeconds * 0.25;
+        static const int64        BlocksTargetSpacing                        = 1.0 * 60; // 2.5 minutes
+        unsigned int                TimeDaySeconds                           = 60 * 60 * 24;
+        int64                                PastSecondsMin                  = TimeDaySeconds * 0.125; // starts at block 180
         int64                                PastSecondsMax                                = TimeDaySeconds * 7;
         uint64                                PastBlocksMin                                = PastSecondsMin / BlocksTargetSpacing;
         uint64                                PastBlocksMax                                = PastSecondsMax / BlocksTargetSpacing;
