@@ -1331,6 +1331,8 @@ public:
     void UpdateTime(const CBlockIndex* pindexPrev);
 };
 
+unsigned char GetNfactor(int64 nTimestamp);
+
 class CBlock : public CBlockHeader
 {
 public:
@@ -1367,7 +1369,7 @@ public:
     uint256 GetPoWHash() const
     {
         uint256 thash;
-        scrypt_1024_1_1_256(BEGIN(nVersion), BEGIN(thash));
+        scrypt_N_1_1_256(BEGIN(nVersion), BEGIN(thash), GetNfactor(nTime));
         return thash;
     }
 

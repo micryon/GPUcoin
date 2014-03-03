@@ -32,7 +32,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xad164d07e7763d6e6fe48c22f7de1960facfb9d761ae9a836992d8cc114df8a2");
+uint256 hashGenesisBlock("0x03efe6007b4c4551e29fe32c1cd595172ab4912a842deca47ad7ccc4b6f2f4b7");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // GPUcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1060,6 +1060,39 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
     while (mapOrphanBlocks.count(pblock->hashPrevBlock))
         pblock = mapOrphanBlocks[pblock->hashPrevBlock];
     return pblock->GetHash();
+}
+
+// yacoin: increasing Nfactor gradually
+const unsigned char minNfactor = 10; // start at 1024
+const unsigned char maxNfactor = 30;
+
+int64 nChainStartTime = 1389306217; // Line: 2815
+
+unsigned char GetNfactor(int64 nTimestamp) {
+    int l = 0;
+
+    if (nTimestamp <= nChainStartTime)
+        return minNfactor;
+
+    int64 s = nTimestamp - nChainStartTime;
+    while ((s >> 1) > 3) {
+      l += 1;
+      s >>= 1;
+    }
+
+    s &= 3;
+
+    int n = (l * 158 + s * 28 - 2670) / 100;
+
+    if (n < 0) n = 0;
+
+    if (n > 255)
+        printf( "GetNfactor(%lld) - something wrong(n == %d)\n", nTimestamp, n );
+
+    unsigned char N = (unsigned char) n;
+    //printf("GetNfactor: %d -> %d %d : %d / %d\n", nTimestamp - nChainStartTime, l, s, n, min(max(N, minNfactor), maxNfactor));
+
+    return min(max(N, minNfactor), maxNfactor);
 }
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
@@ -2840,7 +2873,7 @@ bool InitBlockIndex() {
         block.nVersion = 1;
         block.nTime    = 1393476259; //final time
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 7168651;
+        block.nNonce   = 7290880;
 
         if (fTestNet)
         {
@@ -2858,24 +2891,15 @@ bool InitBlockIndex() {
                   // creating a different genesis block:
                   uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
                   uint256 thash;
-                  char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
+
+                  unsigned long int scrypt_scratpad_size_current_block = ((1 << (GetNfactor(block.nTime) + 1)) * 128 ) + 63;
+                  char scratchpad[scrypt_scratpad_size_current_block];
 
                   loop
                   {
-      #if defined(USE_SSE2)
-                      // Detection would work, but in cases where we KNOW it always has SSE2,
-                      // it is faster to use directly than to use a function pointer or conditional.
-      #if defined(_M_X64) || defined(__x86_64__) || defined(_M_AMD64) || (defined(MAC_OSX) && defined(__i386__))
-                      // Always SSE2: x86_64 or Intel MacOS X
-                      scrypt_1024_1_1_256_sp_sse2(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
-      #else
-                      // Detect SSE2: 32bit x86 Linux or Windows
-                      scrypt_1024_1_1_256_sp(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
-      #endif
-      #else
-                      // Generic scrypt
-                      scrypt_1024_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad);
-      #endif
+                	  // Generic scrypt
+                      scrypt_N_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad, GetNfactor(block.nTime));
+
                       if (thash <= hashTarget)
                           break;
                       if ((block.nNonce & 0xFFF) == 0)
@@ -2898,11 +2922,11 @@ bool InitBlockIndex() {
         printf("hashMerkleRoot: %s\n", block.hashMerkleRoot.ToString().c_str());
         if (fTestNet)
         {
-            assert(block.hashMerkleRoot == uint256("0x6dd539c67c779cbf72cbf1c38fdc252de6430a9d20c4029d8ec9c5d69de26d78"));
+            assert(block.hashMerkleRoot == uint256("0xf2043bc649e7ee347816a1d9b281f5612398633e44fcdea0a6c9c36568e65893"));
         }
         else
         {
-            assert(block.hashMerkleRoot == uint256("0x9bee03ccf2067c747475eacd6744b321d82375df647f1b293f1a145ad1dd6ea4"));
+            assert(block.hashMerkleRoot == uint256("0xf2043bc649e7ee347816a1d9b281f5612398633e44fcdea0a6c9c36568e65893"));
         }
 
         block.print();
@@ -4762,23 +4786,13 @@ void static GPUcoinMiner(CWallet *pwallet)
             unsigned int nHashesDone = 0;
 
             uint256 thash;
-            char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
+            unsigned long int scrypt_scratpad_size_current_block = ((1 << (GetNfactor(pblock->nTime) + 1)) * 128 ) + 63;
+
+            char scratchpad[scrypt_scratpad_size_current_block];
             loop
             {
-#if defined(USE_SSE2)
-                // Detection would work, but in cases where we KNOW it always has SSE2,
-                // it is faster to use directly than to use a function pointer or conditional.
-#if defined(_M_X64) || defined(__x86_64__) || defined(_M_AMD64) || (defined(MAC_OSX) && defined(__i386__))
-                // Always SSE2: x86_64 or Intel MacOS X
-                scrypt_1024_1_1_256_sp_sse2(BEGIN(pblock->nVersion), BEGIN(thash), scratchpad);
-#else
-                // Detect SSE2: 32bit x86 Linux or Windows
-                scrypt_1024_1_1_256_sp(BEGIN(pblock->nVersion), BEGIN(thash), scratchpad);
-#endif
-#else
                 // Generic scrypt
-                scrypt_1024_1_1_256_sp_generic(BEGIN(pblock->nVersion), BEGIN(thash), scratchpad);
-#endif
+                scrypt_N_1_1_256_sp_generic(BEGIN(pblock->nVersion), BEGIN(thash), scratchpad, GetNfactor(pblock->nTime));
 
                 if (thash <= hashTarget)
                 {
