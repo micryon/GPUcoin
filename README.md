@@ -28,23 +28,20 @@ default RPC port 8622
 Development plan
 -------
 
-Temporarily remove checkpoints
-Change ports
-Update GPUcoin_seeder with ports.
-All name changes, and symbol changes: GPUC
-Change max coins amount
-Change KGW retarget time
-Fix micro, milli units (this was changed before to avoid integer overflows for 100B+coins)
-Add in nfactor schedule
-change confirmations needed to account for 60second blocktimes
-Add in DNSSeed address, and hardcoded 3 node seed addresses, 3 data center VPSes: 2 in US, and 1 in canada
-
-Add in graphics
-
-Build windows_alpha client
-*Deploy alpha test client on VPS
-
-<push to github as code complete ahead of deployment>
+  - Temporarily remove checkpoints
+  - Change ports
+  - Update GPUcoin_seeder with ports.
+  - All name changes, and symbol changes: GPUC
+  - Change max coins amount
+  - Change KGW retarget time
+  - Fix micro, milli units (this was changed before to avoid integer overflows for 100B+coins)
+  - Add in nfactor schedule
+  - change confirmations needed to account for 60second blocktimes
+  - Add in DNSSeed address, and hardcoded 3 node seed addresses, 3 data center VPSes: 2 in US, and 1 in canada
+  - Add in graphics
+  - Build windows_alpha client
+  *Deploy alpha test client on VPS
+  - <push to github as code complete ahead of deployment>
 
 Behind firewall:
   
