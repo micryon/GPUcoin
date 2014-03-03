@@ -5,23 +5,60 @@ http://www.realstackcoin.org (tbd)
 
 Copyright (c) 2009-2013 Bitcoin Developers
 
-Copyright (c) 2013-2014 Realstackcoin Developers (colinistheman,onaboat,Tranz,Dajackal)
-
-Copyright (c) 2014 RealStackCoin Developers
-
--- community built from the ground up --
+Copyright (c) 2014 GPUCoin Developers
 
 Proof-of-work algorithm:
- - Scrypt
- - Maxcoins: 134.4 billion
- - Premine: 6 720 000 000 (5.3%)
- - 2.0 minute block targets
- - subsidy halves in N (~21k blocks) blocks (~every month )
- - 1 000 000 coin per block
+ - Symbol: GPUC
+ - Scrypt (w/Nfactor schedule: TBD)
+ - Maxcoins: 13,500,000,000
+ - Premine: 400,000,000
+ - 1 minute block targets
+ - Subsidy halves in 250,000 blocks (roughly 173 days, or 1/2 a year)
+   - halving happens 4 times
+ - Subsidy initial reward: 20,000
+  - block 0-200 : 0 reward
+  - block 200-720: 1 reward (+1 day ahead of mining launch) 
+ - Confirmation needed ?
  - KGW implementation
+ 
+default Port 8623  / 18623 for test net
+default RPC port 8622 
 
-default Port 7382  / +10k for test net
-default RPC port 7381 
+
+Development plan
+-------
+
+Temporarily remove checkpoints
+Change ports
+Update GPUcoin_seeder with ports.
+All name changes, and symbol changes: GPUC
+Change max coins amount
+Change KGW retarget time
+Fix micro, milli units (this was changed before to avoid integer overflows for 100B+coins)
+Add in nfactor schedule
+change confirmations needed to account for 60second blocktimes
+Add in DNSSeed address, and hardcoded 3 node seed addresses, 3 data center VPSes: 2 in US, and 1 in canada
+
+Add in graphics
+
+Build windows_alpha client
+*Deploy alpha test client on VPS
+
+<push to github as code complete ahead of deployment>
+
+Behind firewall:
+  
+  - temp change Pow to smallest possible, temp change nfactor/block schedules
+  - Mine to block 10000, remove temp changes
+  
+  - create *real* genesis hash, and real starttime stamp
+  - reset everything.  
+  - Update merkle hash root
+  - Mine up to block 200
+  
+  - Build windows and OSX client release
+  
+  - push to github on launchday
 
 
 Testing
