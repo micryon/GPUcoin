@@ -1,7 +1,7 @@
-The Real StackCoin
+GPUCoin
 ================================
 
-http://www.realstackcoin.org (tbd)
+http://www.gpucoin.net
 
 Copyright (c) 2009-2013 Bitcoin Developers
 
