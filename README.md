@@ -40,15 +40,14 @@ Development plan
   - (done) Update subsidy schedule
   
     - (done) change confirmations needed to account for 60second blocktimes changed to 12
-  - nfactor schedule
+  - (done) nfactor schedule
   - Add in graphics
 
 
+Deployment Behind firewall:
   - Build windows_alpha client
   *Deploy alpha test client on VPS
   - <push to github as code complete ahead of deployment>
-
-Behind firewall:
   
   - temp change Pow to smallest possible, temp change nfactor/block schedules
   - Mine to block 10000, remove temp changes
