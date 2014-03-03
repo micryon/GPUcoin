@@ -37,7 +37,7 @@ Development plan
   
   - (done) Add in DNSSeed address, and hardcoded 3 node seed addresses, 3 data center VPSes: 2 in US, and 1 in canada
   - (done) Revert fix micro, milli units (this was changed before to avoid integer overflows for 100B+coins)
-  - Update subsidy schedule
+  - (done) Update subsidy schedule
   
     - change confirmations needed to account for 60second blocktimes
   - Add in graphics

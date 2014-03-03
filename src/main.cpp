@@ -1064,28 +1064,28 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 1000000 * COIN;
+    int64 nSubsidy = 20000 * COIN;
 
     if (nHeight == 1)
     {
-       nSubsidy = 6720000000 * COIN;  // premine for people who lost BTCs
+       nSubsidy = 40000000 * COIN;  // premine for people who lost BTCs
     }
-    else if (nHeight >1 && nHeight <= 200)  //launch at 200 with checkpoints, KGW kicks in at block 144 before that .. all zeroes
+    else if (nHeight >1 && nHeight <= 200)  //launch at 200 with checkpoints, KGW kicks in at block 180 before that .. all zeroes
     {
     	nSubsidy = 0 * COIN;
     }
-    else if (nHeight >200 && nHeight <3600)  //real start of mining at 3600
+    else if (nHeight >200 && nHeight <720)  //real start of mining at 720
     {
     	nSubsidy = 1 * COIN;
     }
     else
     {
-		int64 i;
-		int64 nMax= ((nHeight-3600) / 25000);
-		for (i=0;i<nMax;i++)
-		{
-		   nSubsidy -= (nSubsidy*15)/100;
-		}
+    	int64 nHalf = nHeight/250000;
+    	if (nHalf < 4)
+    		nSubsidy >>= nHalf;
+    	else
+    		nSubsidy >>= 4;
+
     }
     // error check just in case I did something stupid
     if (nSubsidy < 0) nSubsidy = 0;
