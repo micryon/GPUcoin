@@ -32,7 +32,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x03efe6007b4c4551e29fe32c1cd595172ab4912a842deca47ad7ccc4b6f2f4b7");
+uint256 hashGenesisBlock("0x483b301b2844dc1dee719d31210afb7b922c4d27a77fb8ebf9aeb01b37e1179b");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // GPUcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1101,7 +1101,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 
     if (nHeight == 1)
     {
-       nSubsidy = 400000000 * COIN;  // premine for people who lost BTCs
+       nSubsidy = 400000000 * COIN;  // premine for GPUcoin IPO Investors
     }
     else if (nHeight >1 && nHeight <= 200)  //launch at 200 with checkpoints, KGW kicks in at block 180 before that .. all zeroes
     {
@@ -1114,12 +1114,22 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     else
     {
     	int64 nHalf = nHeight/250000;
+    	//int64 nHalf = nHeight/40; //hack divide by half every 40 blocks.. for testing only...
     	if (nHalf < 4)
     		nSubsidy >>= nHalf;
     	else
     		nSubsidy >>= 4;
 
     }
+
+    /* alternative schedule (same as litecoin basically)
+    else
+    {
+    	int64 nHalf = nHeight/250000;
+        nSubsidy >>= nHalf;
+    }
+    */
+
     // error check just in case I did something stupid
     if (nSubsidy < 0) nSubsidy = 0;
     return nSubsidy + nFees;
@@ -1237,6 +1247,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
+    //DO NOT CHECK IN THIS HACK
+    //return nProofOfWorkLimit;
     return GetNextWorkRequired_V2(pindexLast, pblock); // KGW
 }
 
@@ -2850,21 +2862,14 @@ bool InitBlockIndex() {
 
     // Only add the genesis block if not reindexing (in which case we reuse the one already on disk)
     if (!fReindex) {
-        // Genesis Block:
-        // CBlock(hash=12a765e31ffd4059bada, PoW=0000050c34a64b415b6b, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=97ddfbbae6, nTime=1317972665, nBits=1e0ffff0, nNonce=2084524493, vtx=1)
-        //   CTransaction(hash=97ddfbbae6, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //     CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d0104404e592054696d65732030352f4f63742f32303131205374657665204a6f62732c204170706c65e280997320566973696f6e6172792c2044696573206174203536)
-        //     CTxOut(nValue=50.00000000, scriptPubKey=040184710fa689ad5023690c80f3a4)
-        //   vMerkleTree: 97ddfbbae6
 
-        // Genesis block
         const char* pszTimestamp = "2/26/2014 Merkel to set out case for Britain staying in the EU";
 
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 1000000 * COIN;
+        txNew.vout[0].nValue = 20000 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
@@ -2873,7 +2878,7 @@ bool InitBlockIndex() {
         block.nVersion = 1;
         block.nTime    = 1393476259; //final time
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 7290880;
+        block.nNonce   = 7507139;
 
         if (fTestNet)
         {
@@ -2882,6 +2887,11 @@ bool InitBlockIndex() {
             block.nNonce   = 8461879;
         }
 
+        //uint256 hash = block.GetHash();
+        //printf("ORIGINAL HASH from .GetHash() hash: %s\n", hash.ToString().c_str());
+        //block.print();
+
+        //printf("==== SEARCH FOR HASH ====");
         // Kept for future
         // If genesis block hash does not match, then generate new genesis hash.
               /*if (true && block.GetHash() != hashGenesisBlock)
@@ -2901,7 +2911,10 @@ bool InitBlockIndex() {
                       scrypt_N_1_1_256_sp_generic(BEGIN(block.nVersion), BEGIN(thash), scratchpad, GetNfactor(block.nTime));
 
                       if (thash <= hashTarget)
+                      {
+                    	  printf ("found it!\n");
                           break;
+                      }
                       if ((block.nNonce & 0xFFF) == 0)
                       {
                           printf("nonce %08X: hash = %s (target = %s)\n", block.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
@@ -2915,21 +2928,26 @@ bool InitBlockIndex() {
                   }
                }*/
 
+
         //// debug print
+        //printf("ORIGINAL nVersion %d\n", block.nVersion);
         uint256 hash = block.GetHash();
+
+        printf("==== FOUND BLOCK + GENESIS INFO ====\n");
+        block.print();
         printf("hash: %s\n", hash.ToString().c_str());
         printf("hashGenesisBlock: %s\n", hashGenesisBlock.ToString().c_str());
         printf("hashMerkleRoot: %s\n", block.hashMerkleRoot.ToString().c_str());
         if (fTestNet)
         {
-            assert(block.hashMerkleRoot == uint256("0xf2043bc649e7ee347816a1d9b281f5612398633e44fcdea0a6c9c36568e65893"));
+            assert(block.hashMerkleRoot == uint256("0x6b5434803540227426b93baac67bcab87805e3474e990c4f5530d013d2cf5976"));
         }
         else
         {
-            assert(block.hashMerkleRoot == uint256("0xf2043bc649e7ee347816a1d9b281f5612398633e44fcdea0a6c9c36568e65893"));
+            assert(block.hashMerkleRoot == uint256("0x6b5434803540227426b93baac67bcab87805e3474e990c4f5530d013d2cf5976"));
         }
 
-        block.print();
+
         assert(hash == hashGenesisBlock);
         printf ("starting new block file");
 
