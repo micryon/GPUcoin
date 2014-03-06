@@ -1101,7 +1101,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 
     if (nHeight == 1)
     {
-       nSubsidy = 40000000 * COIN;  // premine for people who lost BTCs
+       nSubsidy = 400000000 * COIN;  // premine for people who lost BTCs
     }
     else if (nHeight >1 && nHeight <= 200)  //launch at 200 with checkpoints, KGW kicks in at block 180 before that .. all zeroes
     {
