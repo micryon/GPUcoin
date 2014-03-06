@@ -1234,20 +1234,10 @@ void ThreadDNSAddressSeed()
 }
 
 
-
-
-
-
-
-
-
-
-
-
 unsigned int pnSeed[] =
 {
 		//start with node1 162.252.241.28 (toronto), node2: 198.12.78.9 (atlanta), node3: 172.245.30.11 (buffalo)
-		0x1CF1FCA2, 0x094E0CC6, 0x0B1EF5AC
+		0xE98CF8A2, 0x094E0CC6, 0x0B1EF5AC
 };
 
 void DumpAddresses()
