@@ -69,11 +69,11 @@ Internal Testing:
     - blow away all temp datadirs.
          
 Final Modifications:
-  - Get PNG logl & graphics from GPUC, and populate QT folder
-  - Change address prefix from S to G 
+  - (done) Get PNG logo & graphics from GPUC, and populate QT folder
+  - (done) Change address prefix from S to G
+  - (done) Add launch Seed nodes to DNSseed main.cpp hard code 
   - Build windows_alpha client
-  - Test windows alpha client, test send on test network.
-  - Add launch Seed nodes to DNSseed main.cpp hard code
+  - Test windows alpha client, test send on test network.  
   
   <functional code complete here>
   <push to github as code complete ahead of real deployment>
@@ -86,7 +86,7 @@ Real Genesis blocks, and fork prevention:
  - Create *real* genesis hash, merkle root, and get nonce
  - Mine to ~200 blocks
  - Get checkpoints, and update checkpoints.cpp
- - Settle on final node IP address hardcodes, and any changes to DNS seed host addresses
+ - (done) Settle on final node IP address hardcodes, and any changes to DNS seed host addresses
  
 Deployment:   
  - Build Final Windows and OSX client release

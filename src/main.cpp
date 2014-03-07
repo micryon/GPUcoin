@@ -1115,7 +1115,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     {
     	nSubsidy = 0;
     }
-    }
+
     else
     {
     	int64 nHalf = nHeight/250000;
