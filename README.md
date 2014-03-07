@@ -71,7 +71,8 @@ Internal Testing:
 Final Modifications:
   - (done) Get PNG logo & graphics from GPUC, and populate QT folder
   - (done) Change address prefix from S to G
-  - (done) Add launch Seed nodes to DNSseed main.cpp hard code 
+  - (done) Add launch Seed nodes to DNSseed main.cpp hard code
+  - Fix windows build on makefile 
   - Build windows_alpha client
   - Test windows alpha client, test send on test network.  
   
