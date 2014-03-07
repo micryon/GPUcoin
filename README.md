@@ -64,9 +64,7 @@ Internal Testing:
     - (done) test rewards    
     - (done) test send/receive    
     - (done) test GPU mining - solo 
-    - test KGW
-    
-   << -- we are here now -- >>
+    - (done)test KGW       
    
     - blow away all temp datadirs.
          

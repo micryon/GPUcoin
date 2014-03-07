@@ -1107,9 +1107,14 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     {
     	nSubsidy = 0 * COIN;
     }
-    else if (nHeight >200 && nHeight <720)  //real start of mining at 720
+    else if (nHeight >200 && nHeight <2600)  //real start of mining at 2600 (roughly 1 day for this coin.. i think..)
     {
     	nSubsidy = 1 * COIN;
+    }
+    else if (nHeight > 3980003+2600) // everything mined out at this point
+    {
+    	nSubsidy = 0;
+    }
     }
     else
     {
@@ -1228,7 +1233,7 @@ unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBloc
 // Using KGW
 unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-        static const int64        BlocksTargetSpacing                        = 1.0 * 60; // 2.5 minutes
+        static const int64        BlocksTargetSpacing                        = 1.0 * 60; // 1 minute
         unsigned int                TimeDaySeconds                           = 60 * 60 * 24;
         int64                                PastSecondsMin                  = TimeDaySeconds * 0.125; // starts at block 180
         int64                                PastSecondsMax                                = TimeDaySeconds * 7;
