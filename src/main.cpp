@@ -32,7 +32,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x663cf25775f289e0d9c3202530537f0efd3b9a3407a2e2864a6673a4a589495d");
+uint256 hashGenesisBlock("0x46b6c27a97b2b34870cf294cdd8eebf0f07b2bd6a0d203cc55bb0c6a765af4e0");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // GPUcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2866,7 +2866,7 @@ bool InitBlockIndex() {
     printf("Initializing databases...\n");
 
 /*
- * CBlock(hash=663cf25775f289e0d9c3202530537f0efd3b9a3407a2e2864a6673a4a589495d, input=0100000000000000000000000000000000000000000000000000000000000000000000006b9be2c821e232d516f402586ce6f7e09e830ee1208467abda10a68aaf2f719e17b81a53f0ff0f1e1e9a8000, PoW=00000520e57294662822605d9b8775c92a992fd96df75419a8fb1458f1dada68, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, hashMerkleRoot=9e712faf8aa610daab678420e10e839ee0f7e66c5802f416d532e221c8e29b6b, nTime=1394259991, nBits=1e0ffff0, nNonce=8428062, vtx=1)
+ * CBlock(hash=46b6c27a97b2b34870cf294cdd8eebf0f07b2bd6a0d203cc55bb0c6a765af4e0, input=0100000000000000000000000000000000000000000000000000000000000000000000003f96f88c43a4d34f19e90001282d91e05550ac9b95ac63af9c0233f41078967917b81a53f0ff0f1ef84b8a00, PoW=00000e095df241015d8cc0a8d0d650fe01ef46be252c49cd4e3283e1f37d3f00, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, hashMerkleRoot=79967810f433029caf63ac959bac5055e0912d280100e9194fd3a4438cf8963f, nTime=1394259991, nBits=1e0ffff0, nNonce=9063416, vtx=1)
  */
 
     // Only add the genesis block if not reindexing (in which case we reuse the one already on disk)
@@ -2878,7 +2878,7 @@ bool InitBlockIndex() {
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 20000 * COIN;
+        txNew.vout[0].nValue = 0 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
@@ -2887,7 +2887,7 @@ bool InitBlockIndex() {
         block.nVersion = 1;
         block.nTime    = 1394259991; //final time
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 8428062;
+        block.nNonce   = 9063416;
 
         if (fTestNet)
         {
@@ -2903,7 +2903,7 @@ bool InitBlockIndex() {
         //printf("==== SEARCH FOR HASH ====");
         // Kept for future
         // If genesis block hash does not match, then generate new genesis hash.
-              /*if (true && block.GetHash() != hashGenesisBlock)
+              if (true && block.GetHash() != hashGenesisBlock)
               {
                   printf("Searching for genesis block...\n");
                   // This will figure out a valid hash and Nonce if you're
@@ -2935,7 +2935,7 @@ bool InitBlockIndex() {
                           ++block.nTime;
                       }
                   }
-               }*/
+               }
 
 
         //// debug print
@@ -2949,11 +2949,11 @@ bool InitBlockIndex() {
         printf("hashMerkleRoot: %s\n", block.hashMerkleRoot.ToString().c_str());
         if (fTestNet)
         {
-            assert(block.hashMerkleRoot == uint256("0x9e712faf8aa610daab678420e10e839ee0f7e66c5802f416d532e221c8e29b6b"));
+            assert(block.hashMerkleRoot == uint256("0x79967810f433029caf63ac959bac5055e0912d280100e9194fd3a4438cf8963f"));
         }
         else
         {
-            assert(block.hashMerkleRoot == uint256("0x9e712faf8aa610daab678420e10e839ee0f7e66c5802f416d532e221c8e29b6b"));
+            assert(block.hashMerkleRoot == uint256("0x79967810f433029caf63ac959bac5055e0912d280100e9194fd3a4438cf8963f"));
         }
 
 
