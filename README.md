@@ -30,12 +30,6 @@ Proof-of-work algorithm:
  - everything else: pretty much litecoin coin and paste.
  
  
-wait.. there's a problem with stopping the halving..
- - recommend:  13 500 000 000  + 720
- - initial reward: 27000
- - block halving rate: 25000 , infinite
- 
- 
 default Port 8623  / 18623 for test net
 default RPC port 8622 
 
@@ -64,48 +58,46 @@ Internal Testing:
     - (done) test rewards    
     - (done) test send/receive    
     - (done) test GPU mining - solo 
-    - (done)test KGW       
-   
-    - blow away all temp datadirs.
+    - (done)test KGW              
          
 Final Modifications:
   - (done) Get PNG logo & graphics from GPUC, and populate QT folder
   - (done) Change address prefix from S to G
   - (done) Add launch Seed nodes to DNSseed main.cpp hard code
-  - Fix windows build on makefile 
-  - Build windows_alpha client
-  - Test windows alpha client, test send on test network.  
-  
-  <functional code complete here>
-  <push to github as code complete ahead of real deployment>
-  
-  <get code reviews>
+  - (done) Fix windows build on makefile 
+  - (done) Build windows_alpha client
+  - (done) Test windows alpha client,     
+  - (done) <push to github as code complete ahead of real deployment>  
+  - (in progress : cryptowest team reviewing) get code reviews  
+  - (done) test send on test network.
 
 Real Genesis blocks, and fork prevention:  
- - Update to launch pszTimestamp
- - Update to launch nTime to curent POSIX time 
- - Create *real* genesis hash, merkle root, and get nonce
- - Mine to ~200 blocks
- - Get checkpoints, and update checkpoints.cpp
+ - (done)Update to launch pszTimestamp
+ - (done)Update to launch nTime to curent POSIX time 
+ - (done)Create *real* genesis hash, merkle root, and get nonce
+ - (done)Mine to 179 blocks
+ - (done)Get checkpoints, and update checkpoints.cpp
  - (done) Settle on final node IP address hardcodes, and any changes to DNS seed host addresses
  
 Deployment:   
- - Build Final Windows and OSX client release
- - Deploy on VPS behind firewall: DNSSeed, and Seed node
- - Setup IP tables, etc.
+ - (done) Build Final Windows 
+ - Build OSX client
+ - (done) Deploy on VPS behind firewall: DNSSeed, and Seed node
+ - (done) Setup IP tables, etc.
 
 Final Test: 
- - Test Run DNSseed and make sure it can ping seed nodes, and shows as available 
- - Test that DNS seed is working using nslookup
- - Test Final windows build can connect immediately from fresh start (no previous blockdb)
- - Test Final windows build sends / receive coins working 
- - Test GPU mining against "real" network for blocks 200-210 (reward=1)
- - Send private build to GPUC
- - Send 400M premine coins to GPUC's wallet
+ - (done) Test Run DNSseed and make sure it can ping seed nodes, and shows as available 
+ - (done) Test that DNS seed is working using nslookup
+ - (done) Test Final windows build can connect immediately from fresh start (no previous blockdb)
+ - (done) Test Final windows build sends / receive coins working 
+ - (done) Test GPU mining against "real" network for blocks 200-210 (reward=1)
+ - (done) Send private build to GPUC
+ - (done) Send 400M premine coins to GPUC's wallet
  
 Final Launch: 
- - Upload windows build to mega, post launch code to github 
- - Launch
+ - AI: GPUC - he has client now - Upload windows build to mega, 
+ - Push code post launch code to github 
+ - "Launch Post"
 
 
 Testing

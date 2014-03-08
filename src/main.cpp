@@ -32,7 +32,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x483b301b2844dc1dee719d31210afb7b922c4d27a77fb8ebf9aeb01b37e1179b");
+uint256 hashGenesisBlock("0x663cf25775f289e0d9c3202530537f0efd3b9a3407a2e2864a6673a4a589495d");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // GPUcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -1111,7 +1111,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     {
     	nSubsidy = 1 * COIN;
     }
-    else if (nHeight > 3980003+2600) // everything mined out at this point
+    else if (nHeight > 3980003+41600) // everything mined out at this point
     {
     	nSubsidy = 0;
     }
@@ -2865,10 +2865,14 @@ bool InitBlockIndex() {
     pblocktree->WriteFlag("txindex", fTxIndex);
     printf("Initializing databases...\n");
 
+/*
+ * CBlock(hash=663cf25775f289e0d9c3202530537f0efd3b9a3407a2e2864a6673a4a589495d, input=0100000000000000000000000000000000000000000000000000000000000000000000006b9be2c821e232d516f402586ce6f7e09e830ee1208467abda10a68aaf2f719e17b81a53f0ff0f1e1e9a8000, PoW=00000520e57294662822605d9b8775c92a992fd96df75419a8fb1458f1dada68, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, hashMerkleRoot=9e712faf8aa610daab678420e10e839ee0f7e66c5802f416d532e221c8e29b6b, nTime=1394259991, nBits=1e0ffff0, nNonce=8428062, vtx=1)
+ */
+
     // Only add the genesis block if not reindexing (in which case we reuse the one already on disk)
     if (!fReindex) {
 
-        const char* pszTimestamp = "2/26/2014 Merkel to set out case for Britain staying in the EU";
+        const char* pszTimestamp = "3/7/2014 Satoshi Nakamoto Denies Being Creator of Bitcoin Amid Media Frenzy";
 
         CTransaction txNew;
         txNew.vin.resize(1);
@@ -2881,15 +2885,15 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1393476259; //final time
+        block.nTime    = 1394259991; //final time
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 7507139;
+        block.nNonce   = 8428062;
 
         if (fTestNet)
         {
-            block.nTime    = 1389749325;
+            block.nTime    = 1394259991;
             block.nBits    = 0x1e0ffff0;
-            block.nNonce   = 8461879;
+            block.nNonce   = 8428062;
         }
 
         //uint256 hash = block.GetHash();
@@ -2945,11 +2949,11 @@ bool InitBlockIndex() {
         printf("hashMerkleRoot: %s\n", block.hashMerkleRoot.ToString().c_str());
         if (fTestNet)
         {
-            assert(block.hashMerkleRoot == uint256("0x6b5434803540227426b93baac67bcab87805e3474e990c4f5530d013d2cf5976"));
+            assert(block.hashMerkleRoot == uint256("0x9e712faf8aa610daab678420e10e839ee0f7e66c5802f416d532e221c8e29b6b"));
         }
         else
         {
-            assert(block.hashMerkleRoot == uint256("0x6b5434803540227426b93baac67bcab87805e3474e990c4f5530d013d2cf5976"));
+            assert(block.hashMerkleRoot == uint256("0x9e712faf8aa610daab678420e10e839ee0f7e66c5802f416d532e221c8e29b6b"));
         }
 
 
