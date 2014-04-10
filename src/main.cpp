@@ -1097,46 +1097,27 @@ unsigned char GetNfactor(int64 nTimestamp) {
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 20000 * COIN;
+    int64 nSubsidy = 20000*COIN;
 
     if (nHeight == 1)
-    {
-       nSubsidy = 400000000 * COIN;  // premine for GPUcoin IPO Investors
-    }
+        nSubsidy = 400000000 * COIN;  // premine for GPUcoin IPO Investors
     else if (nHeight >1 && nHeight <= 200)  //launch at 200 with checkpoints, KGW kicks in at block 180 before that .. all zeroes
-    {
     	nSubsidy = 0 * COIN;
-    }
     else if (nHeight >200 && nHeight <2600)  //real start of mining at 2600 (roughly 1 day for this coin.. i think..)
-    {
     	nSubsidy = 1 * COIN;
-    }
-    else if (nHeight > 3980003+41600) // everything mined out at this point
-    {
-    	nSubsidy = 0;
-    }
-
+    else if (nHeight >= 2600 && nHeight <= 65535)  //hard fork
+    	nSubsidy = 20000*COIN;
+    else if (nHeight > 65535 && nHeight <= 315535)
+    	nSubsidy = 10000*COIN;
+    else if (nHeight > 315535 && nHeight <= 565535)
+    	nSubsidy = 5000*COIN;
+    else if (nHeight > 565535 && nHeight <= 815535)
+    	nSubsidy = 2500*COIN;
+    else if (nHeight > 815535 && nHeight <= 5973024)
+    	nSubsidy = 1250*COIN;
     else
-    {
-    	int64 nHalf = nHeight/250000;
-    	//int64 nHalf = nHeight/40; //hack divide by half every 40 blocks.. for testing only...
-    	if (nHalf < 4)
-    		nSubsidy >>= nHalf;
-    	else
-    		nSubsidy >>= 4;
+    	nSubsidy = 0*COIN;
 
-    }
-
-    /* alternative schedule (same as litecoin basically)
-    else
-    {
-    	int64 nHalf = nHeight/250000;
-        nSubsidy >>= nHalf;
-    }
-    */
-
-    // error check just in case I did something stupid
-    if (nSubsidy < 0) nSubsidy = 0;
     return nSubsidy + nFees;
 }
 
